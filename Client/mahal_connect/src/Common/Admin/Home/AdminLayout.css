@@ -1,0 +1,41 @@
+/* Background */
+.admin-bg {
+  background-color: var(--bg-color) !important;
+  min-height: 100vh;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Dashboard title */
+.dashboard-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--text-primary-color);
+}
+.dashboard-subtitle{
+  color: var(--text-secondary-color);
+}
+
+/* Navbar base */
+.admin-navbar .nav-link {
+  color: var(--text-secondary-color);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  border: 1px solid var(--card-border);
+  white-space: nowrap;
+}
+
+.admin-navbar.nav-pills .nav-link.active {
+  background-color: var(--card-bg-primary) !important;
+  color: var(--icon-bg) !important;
+  font-weight: 500 ;
+  border: 1px solid var(--card-border);
+}
+
+/* Hover state */
+.admin-navbar .nav-link:hover:not(.active) {
+  background-color: var(--card-bg-secondary) ;
+  color: var(--text-primary-color);
+}
+

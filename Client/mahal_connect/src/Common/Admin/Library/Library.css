@@ -1,0 +1,105 @@
+/* Card */
+.library-card {
+  border-radius: 24px;
+}
+
+/* Icon */
+.library-icon-wrapper {
+  background-color:var(--icon-bg);
+  padding: 10px;
+  border-radius: 12px;
+  color:var(--icon-color);
+}
+
+/* Category badge (FIXED for Bootstrap Badge) */
+.badge.category-badge {
+  background-color: #f1f3f5 !important;
+  color: #495057 !important;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-transform: capitalize;
+}
+
+/* Stock Status Pills (BASE) */
+.badge.status-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* In stock */
+.badge.status-pill.instock {
+  background-color: #e6f3ed !important;
+  color: #1e4d3a !important;
+  border: 1px solid #c3e6d5;
+}
+
+/* Out of stock */
+.badge.status-pill.outofstock {
+  background-color: #fceaea !important;
+  color: #d9534f !important;
+  border: 1px solid #f5c6cb;
+}
+
+/* Table header */
+.custom-table thead th {
+  font-size: 0.85rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
+}
+.input-box{
+  background-color: var(--card-bg-secondary) !important;
+  border: none !important;
+  color: var(--text-primary-color) !important;
+  outline: none !important;
+}
+.input-box::placeholder{
+  color: var(--text-secondary-color) !important;
+}
+.search-icon-box{
+  background-color: var(--card-bg-secondary) !important;
+  border: 1px solid var(--card-border) !important;
+}
+.search-icon{
+  color: var(--text-secondary-color) !important;
+}
+.select{
+  background-color: var(--card-bg-secondary) !important;
+  border: none !important;
+  color: var(--text-secondary-color) !important;
+}
+/* Book title & quantity sizing */
+.title-text {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+td.fw-medium {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn-custom {
+  border-radius: 50px;
+}
+
+/* Action buttons */
+.action-btn {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  color: var(--text-secondary-color) !important;
+}
+
+.action-btn:hover {
+  opacity: 1;
+}

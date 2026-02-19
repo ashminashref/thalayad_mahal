@@ -1,0 +1,169 @@
+/* =========================
+   PAGE
+========================= */
+
+.user-library-page {
+  background-color: var(--bg-color);
+  color: var(--text-primary-color);
+  min-height: 100vh;
+  padding: 24px;
+  padding-bottom: 80px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.library-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.library-header h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.library-header p {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary-color);
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn.icon-only {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--card-item-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn.icon-only:hover {
+  background-color: var(--card-item-bg-hover);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.book-card {
+  background-color: var(--card-bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 16px;
+  transition: all 0.25s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+}
+
+/* Icon */
+.book-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background-color: var(--icon-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.book-card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+/* Meta */
+.book-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--text-secondary-color);
+  margin-bottom: 10px;
+}
+
+.book-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* =========================
+   STOCK
+========================= */
+
+.stock {
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stock.available {
+  color: #22c55e;
+}
+
+.stock.unavailable {
+  color: #ef4444;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.borrow-btn {
+  margin-top: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--btn-pay);
+  color: var(--user-card-txt-primary);
+}
+
+.borrow-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.borrow-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+}

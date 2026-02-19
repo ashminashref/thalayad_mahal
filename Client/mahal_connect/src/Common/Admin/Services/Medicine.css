@@ -1,0 +1,70 @@
+.community-icon-wrapper {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 12px;
+  color: #1a2e26;
+  border: 1px solid #eee;
+}
+
+/* Custom Select Styling to match screenshot */
+.filter-select-wrapper {
+  position: relative;
+  width: 160px;
+}
+
+.filter-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  z-index: 5;
+}
+
+.filter-select {
+  padding-left: 32px !important;
+  border-radius: 50px !important;
+  border: 1px solid #dee2e6 !important;
+  font-size: 0.85rem !important;
+  height: 38px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Medical Type Pill */
+.type-pill-medical {
+  background-color: #fff1f0 !important;
+  color: #cf1322 !important;
+  border: 1px solid #ffa39e !important;
+  font-weight: 400 !important;
+  padding: 4px 12px !important;
+  border-radius: 6px !important;
+  font-size: 0.75rem !important;
+}
+
+.smallest {
+  font-size: 0.75rem;
+}
+
+.stats-mini-card h6 {
+  font-size: 1rem;
+}
+
+/* Status Pill overrides */
+.status-pill.pending {
+  background-color: #fffbe6 !important;
+  color: #d48806 !important;
+  border: 1px solid #ffe58f;
+}
+
+.status-pill.approved {
+  background-color: #f6ffed !important;
+  color: #389e0d !important;
+  border: 1px solid #b7eb8f;
+}
+
+.status-pill.rejected {
+  background-color: #fff1f0 !important;
+  color: #cf1322 !important;
+  border: 1px solid #ffa39e;
+}

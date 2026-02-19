@@ -1,0 +1,147 @@
+/* ================= CARD ================= */
+
+.cert-card {
+  border-radius: 22px;
+  background-color: var(--card-bg, #ffffff);
+}
+
+/* ================= HEADER ICON ================= */
+
+.cert-icon-wrapper {
+  background-color: var(--icon-bg);
+  color: var(--icon-color);
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= TABLE ================= */
+
+.custom-table thead th {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary-color);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.custom-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.custom-table tbody tr:hover {
+  background-color: var(--row-hover, #f9fafb);
+}
+
+/* ================= TEXT ================= */
+
+.title-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary-color);
+}
+
+.app-id {
+  font-size: 11px;
+  color: var(--text-secondary-color);
+}
+
+.smallest {
+  font-size: 11px;
+}
+
+.date {
+  color: var(--text-secondary-color);
+}
+
+/* ================= TYPE BADGE ================= */
+
+.badge.cert-type-badge {
+  background-color: #eef2ff !important;
+  color: #3730a3 !important;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-transform: capitalize;
+}
+
+/* ================= STATUS PILLS ================= */
+
+.badge.status-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+}
+
+/* Pending */
+.badge.status-pill.pending {
+  background-color: #fff4e5 !important;
+  color: #b45309 !important;
+  border-color: #fde68a;
+}
+
+/* Approved */
+.badge.status-pill.approved {
+  background-color: #e6f4ea !important;
+  color: #1e7e34 !important;
+  border-color: #c3e6cb;
+}
+
+/* Rejected */
+.badge.status-pill.rejected {
+  background-color: #fcebea !important;
+  color: #cc1f1a !important;
+  border-color: #f5c6cb;
+}
+
+/* ================= ACTION ICONS ================= */
+
+.action-icon {
+  opacity: 0.65;
+  transition: all 0.2s ease;
+}
+
+.action-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ================= DROPDOWN ================= */
+
+.form-select {
+  background-color: var(--card-bg-secondary);
+  color: var(--text-secondary-color);
+  font-size: 14px;
+}
+
+.form-select:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: var(--card-border);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .cert-card {
+    border-radius: 16px;
+  }
+
+  .title-text {
+    font-size: 13px;
+  }
+
+  .badge.status-pill {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .badge.cert-type-badge {
+    font-size: 11px;
+  }
+}

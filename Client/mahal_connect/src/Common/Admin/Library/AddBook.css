@@ -1,0 +1,255 @@
+/* ================= CARD ================= */
+
+.library-card {
+  border-radius: 24px;
+  background-color: var(--card-bg, #ffffff);
+}
+
+/* ================= ICON ================= */
+
+.library-icon-wrapper {
+  background-color: var(--icon-bg);
+  padding: 10px;
+  border-radius: 12px;
+  color: var(--icon-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= SEARCH ================= */
+
+.search-input-group {
+  background-color: var(--card-bg-secondary);
+  border-radius: 999px;
+  padding: 2px;
+}
+
+/* Search icon container */
+.search-icon-box {
+  background-color: var(--card-bg-secondary) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: 999px 0 0 999px;
+  padding-left: 14px;
+  padding-right: 10px;
+}
+
+/* Search icon */
+.search-icon {
+  color: var(--text-secondary-color) !important;
+}
+
+/* Search input */
+.input-box {
+  background-color: var(--card-bg-secondary) !important;
+  border: none !important;
+  color: var(--text-primary-color) !important;
+  font-size: 14px;
+}
+
+.input-box:focus {
+  background-color: var(--card-bg-secondary) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.input-box::placeholder {
+  color: var(--text-secondary-color) !important;
+}
+
+/* ================= FILTER SELECT ================= */
+
+.select {
+  background-color: var(--card-bg-secondary) !important;
+  border: none !important;
+  color: var(--text-secondary-color) !important;
+  font-size: 14px;
+}
+
+.select:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* ================= CATEGORY BADGE ================= */
+
+.badge.category-badge {
+  background-color: #f1f3f5 !important;
+  color: #495057 !important;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-transform: capitalize;
+}
+
+/* ================= STATUS PILLS ================= */
+
+.badge.status-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+  border: 1px solid transparent;
+}
+
+/* In Stock */
+.badge.status-pill.instock {
+  background-color: #e6f3ed !important;
+  color: #1e4d3a !important;
+  border: 1px solid #c3e6d5;
+}
+
+/* Out of Stock */
+.badge.status-pill.outofstock {
+  background-color: #fceaea !important;
+  color: #d9534f !important;
+  border: 1px solid #f5c6cb;
+}
+
+/* ================= TABLE ================= */
+
+.custom-table thead th {
+  font-size: 0.85rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
+  color: var(--text-secondary-color);
+  font-weight: 600;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.custom-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.custom-table tbody tr:hover {
+  background-color: var(--row-hover, #f9fafb);
+}
+
+/* ================= TEXT ================= */
+
+.title-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary-color);
+}
+
+td.fw-medium {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary-color);
+}
+
+.subtitle-text {
+  color: var(--text-secondary-color);
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-custom {
+  border-radius: 50px;
+}
+
+/* Action buttons */
+.action-btn {
+  opacity: 0.7;
+  transition: all 0.2s ease;
+  color: var(--text-secondary-color) !important;
+}
+
+.action-btn:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  
+  /* Reset button defaults */
+  background: transparent;
+  border: none;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Colors & Transitions */
+  color: #6c757d; /* Soft grey */
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.modal-close-btn:hover {
+  background-color: #f8f9fa; /* Light background on hover */
+  color: #212529; /* Darker icon on hover */
+  transform: rotate(90deg); 
+}
+
+.modal-close-btn:active {
+  background-color: #e9ecef;
+  transform: scale(0.95); /* Click feedback */
+}
+
+.modal-close-btn svg {
+  display: block;
+}
+
+
+/* Container for the switch */
+.custom-switch {
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* The actual toggle track */
+.custom-switch .form-check-input {
+  width: 48px !important; /* Larger width for a modern look */
+  height: 24px !important;
+  background-color: #e9ecef; /* Light grey when off */
+  border: 1px solid #dee2e6;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23adb5bd'/%3e%3c/svg%3e"); /* Custom knob color when off */
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, background-position 0.15s ease-in-out;
+}
+
+/* Toggle track when ON */
+.custom-switch .form-check-input:checked {
+  background-color: #1a2e26 !important; /* The dark forest green from your image */
+  border-color: #1a2e26 !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e"); /* White knob when on */
+}
+
+/* Remove the blue Bootstrap glow and add a subtle dark one */
+.custom-switch .form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(26, 46, 38, 0.1);
+  border-color: #1a2e26;
+}
+
+/* Smooth scaling when clicked */
+.custom-switch .form-check-input:active {
+  filter: brightness(90%);
+}
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .library-card {
+    border-radius: 16px;
+  }
+
+  .title-text {
+    font-size: 13px;
+  }
+
+  td.fw-medium {
+    font-size: 13px;
+  }
+}

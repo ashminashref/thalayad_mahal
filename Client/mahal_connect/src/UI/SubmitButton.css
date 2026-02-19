@@ -1,0 +1,121 @@
+.submit-btn {
+  position: relative;
+  width: 100%;
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  background: #1a1a1a !important;
+  color: white !important;
+  border-radius: 8px;
+  transition: all 0.3s ease !important;
+  overflow: hidden;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4) !important;
+}
+
+.icon-container {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  color: #3b82f6; /* Blue theme for submit, or use #22c55e for green */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.default-icon {
+  opacity: 1;
+  visibility: visible;
+  color: #94a3b8; /* Muted gray for default state */
+}
+
+/* Hover sequences */
+.submit-btn:hover .inbox-icon {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.submit-btn:hover .doc-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 0s;
+}
+
+.submit-btn:hover .edit-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 0.5s;
+}
+
+.submit-btn:hover .send-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 1s;
+}
+
+.submit-btn:hover .check-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 1.5s;
+}
+
+/* Active/Click state */
+.submit-btn:active .icon {
+  animation: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.submit-btn:active .check-icon {
+  animation: checkmarkAppear 0.6s ease forwards;
+  visibility: visible;
+  color: #22c55e;
+}
+
+.btn-text {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+@keyframes iconRotate {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.5);
+  }
+  5% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+  15% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes checkmarkAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}

@@ -1,0 +1,62 @@
+.payment-card {
+  border-radius: 24px;
+}
+
+.payment-icon-wrapper {
+  background-color: var(--icon-bg);
+  padding: 10px;
+  border-radius: 12px;
+  color: var(--icon-color);
+}
+
+.badge.type-badge {
+  background-color: #f1f3f5 !important;
+  color: #495057 !important;
+
+  font-weight: 500;
+  font-size: 13px;
+
+  padding: 6px 12px;
+  border-radius: 8px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-transform: capitalize;
+}
+
+
+/* Status Pills */
+.status-pill {
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.status-pill.completed { background-color: #e6f3ed !important; color: #242927; border: 1px solid #c3e6d5; }
+.status-pill.pending { background-color: #fff9db !important; color: #856404; border: 1px solid #ffeeba; }
+.status-pill.failed { background-color: #fceaea !important; color: #d9534f; border: 1px solid #f5c6cb; }
+
+.custom-table thead th {
+  background-color: transparent;
+  color:var(--text-primary-color);
+  font-size: 0.85rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.btn-custom {
+  border-radius: 50px;
+  color: white !important;
+}
+.input{
+  background-color: var(--card-bg-secondary) !important;
+  color: var(--text-primary-color) !important;
+}
+.input::placeholder{
+  color: var(--text-secondary-color) !important;
+  
+}

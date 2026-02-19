@@ -1,0 +1,256 @@
+/* Layout Strategy: Full screen on desktop, app-width on mobile */
+.certificate-page-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.certificate-content-container {
+  width: 100%;
+  max-width: 1200px; 
+  box-sizing: border-box;
+}
+
+.certificate-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.certificate-back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-top: 0.5rem;
+  color: var(--text-primary-color);
+  transition: opacity 0.2s;
+}
+
+.certificate-back-btn:hover {
+    transform: translateX(-3px);
+
+}
+
+.certificate-header-text h1 {
+  font-family: 'PlayFair Display', serif;
+  font-size: 2rem;
+  margin: 0;
+  color:var(--text-primary-color);
+  font-weight: 500;
+}
+
+.certificate-header-text p {
+  color: var(--text-secondary-color);
+  margin: 4px 0 0 0;
+  font-size: 1rem;
+}
+
+/* Section Labels */
+.certificate-section-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary-color);
+  margin-bottom: 1.25rem;
+}
+
+/* Certificate Type List - Grid on desktop, stack on mobile */
+.certificate-type-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.certificate-type-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--card-item-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.certificate-type-item:hover {
+  transform: translateY(-2px);
+}
+
+.certificate-type-item.active {
+  border-color:var(--card-border);
+  background: var(--card-item-bg-active);
+  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); */
+}
+
+.certificate-icon-box {
+  background: var(--icon-bg);
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.certificate-type-item.active .certificate-icon-box {
+  background: var(--icon-bg);
+  color: var(--text-primary-color);
+}
+
+.certificate-type-info h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--text-primary-color);
+}
+
+.certificate-type-info p {
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+  margin: 2px 0 0 0;
+  font-family: 'PlayFair Display';
+}
+
+/* Form Card Styling */
+.certificate-form-card {
+  background: var(--card-item-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02); */
+}
+
+.certificate-input-field {
+  margin-bottom: 1.75rem;
+}
+
+.certificate-input-field label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary-color);
+  margin-bottom: 0.75rem;
+}
+
+/* Input Wrapper & Icons */
+.certificate-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.certificate-field-icon {
+  position: absolute;
+  left: 1.25rem;
+  color: var(--nav-icon-txt);
+}
+
+.certificate-input-wrapper input,
+.certificate-input-wrapper textarea {
+  width: 100%;
+  padding: 0.9rem 1.25rem 0.9rem 3.25rem;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  background: var(--nav-box-bg);
+  font-size: 1rem;
+  color: var(--text-primary-color);
+  outline: none;
+  transition: all 0.2s;
+}
+
+.certificate-input-wrapper.no-icon input,
+.certificate-input-wrapper.no-icon textarea {
+  padding-left: 1.25rem;
+}
+
+.certificate-input-wrapper input:focus,
+.certificate-input-wrapper textarea:focus {
+  border-color: var(--card-border);
+  background:var(--card-item-bg-active);
+  box-shadow: 0 0 0 4px rgba(26, 46, 35, 0.05);
+}
+
+/* Responsive Row */
+.certificate-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Upload Zone */
+.certificate-upload-zone {
+  border: 2px dashed var(--text-secondary-color);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--nav-box-bg);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.certificate-upload-zone:hover {
+  border-color: var(--card-border);
+}
+
+.certificate-upload-zone p {
+  color: var(--text-primary-color);
+  font-size: 1rem;
+}
+
+.certificate-upload-zone span {
+  color: var(--text-secondary-color);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.certificate-submit-btn {
+  width: 100%;
+  background-color: #1a2e23;
+  color: white;
+  border: none;
+  padding: 1.25rem;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.certificate-submit-btn:active {
+  transform: scale(0.99);
+}
+
+/* RESPONSIVE BREAKPOINT: TRANSFORMS TO PHONE VIEW */
+@media (max-width: 768px) {
+  .certificate-content-container {
+    max-width: 500px; /* Constrains the layout to look like an App */
+  }
+
+  .certificate-header-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .certificate-form-card {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .certificate-row {
+    grid-template-columns: 1fr; /* Stacks inputs on mobile */
+    gap: 0;
+  }
+
+  .certificate-type-list {
+    grid-template-columns: 1fr;
+  }
+}

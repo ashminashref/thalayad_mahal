@@ -1,0 +1,173 @@
+/* =========================
+   PAGE
+========================= */
+
+.user-edu-page {
+  background-color: var(--bg-color);
+  color: var(--text-primary-color);
+  min-height: 100vh;
+  padding: 24px;
+  padding-bottom: 80px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.user-edu-header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.edu-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.edu-header p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+}
+
+/* Back button */
+.edu-back-btn {
+  background-color: var(--card-item-bg) !important;
+  border-radius: 12px !important;
+}
+
+.edu-back-btn:hover {
+  background-color: var(--card-item-bg-hover) !important;
+}
+
+/* =========================
+   LIST
+========================= */
+
+.edu-list h4 {
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary-color);
+}
+
+/* =========================
+   CARD
+========================= */
+
+.edu-card {
+  background-color: var(--card-bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: all 0.25s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+}
+
+/* Header */
+.edu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edu-card-header h5 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.edu-card-header small {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-secondary-color);
+}
+
+/* Meta */
+.edu-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.75rem;
+  color: var(--text-secondary-color);
+  margin: 8px 0;
+}
+
+.edu-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Description */
+.desc {
+  font-size: 0.85rem;
+  margin: 0 0 10px;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.status.upcoming {
+  background-color: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+}
+
+.status.active {
+  background-color: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+}
+
+.status.completed {
+  background-color: rgba(107, 114, 128, 0.12);
+  color: #6b7280;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.register-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--btn-pay);
+  color: var(--user-card-txt-primary);
+}
+
+.register-btn:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .edu-meta {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

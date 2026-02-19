@@ -1,0 +1,114 @@
+/* ===== Members Page ===== */
+
+.filter-tabs {
+  display: flex;
+  gap: 12px;
+}
+
+.filter-tabs .tab {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.filter-tabs .tab.active,
+.filter-tabs .tab:hover {
+  background: var(--primary-green);
+  color: #ffffff;
+  border-color: var(--primary-green);
+}
+
+/* ===== Stats Cards (reuse dashboard styles) ===== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ===== Members Grid ===== */
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ===== Member Card ===== */
+
+.member-card-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.member-card-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.member-card-header {
+  align-items: center;
+}
+
+.member-details .detail-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.member-card-footer {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+}
+
+/* ===== Status Badge ===== */
+
+.badge.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* ===== Online Indicator ===== */
+
+.online-indicator {
+  color: var(--accent-green);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1200px) {
+  .members-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-tabs {
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  .filter-tabs .tab {
+    white-space: nowrap;
+  }
+}

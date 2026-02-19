@@ -1,0 +1,66 @@
+/* Import Google Fonts if not already in your index.html */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+.document-manager-container {
+    max-width: 800px;
+    /* Main UI Text / Headings */
+    font-family: 'DM Sans', sans-serif; 
+}
+
+/* Titles and Main UI Elements */
+.document-manager-container h4,
+.document-manager-container h6,
+.badge,
+.btn {
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* Paragraphs and Descriptive Text */
+.document-manager-container p,
+.document-manager-container small,
+.document-manager-container .text-muted {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+}
+
+.document-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 15px !important;
+    background: #ffffff;
+}
+
+.document-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+}
+
+.doc-icon-wrapper {
+    background-color: #f8f9fa;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.action-btn {
+    border-radius: 8px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 576px) {
+    .document-card .card-body {
+        padding: 12px;
+    }
+    
+    .doc-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+}

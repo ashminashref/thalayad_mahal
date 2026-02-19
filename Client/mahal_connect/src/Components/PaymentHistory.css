@@ -1,0 +1,99 @@
+/* PaymentHistory.css */
+
+.payment-history-container {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    max-width: 900px; /* Optimal reading width */
+}
+
+/* Header Styling */
+.payment-history-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.payment-back-btn {
+    border: none;
+    background-color: #f1f3f5;
+    border-radius: 8px;
+    margin-right: 12px;
+    padding: 8px 10px;
+}
+
+.payment-history-header h5 {
+    margin-bottom: 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+/* Card & Table Styling */
+.payment-history-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Prevents child bleed-out */
+}
+
+.payment-history-card .card-body {
+    padding: 0; /* Remove padding so table flush with card edges on mobile */
+}
+
+.table {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Prevents text wrapping in weird places */
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    border-top: none;
+    color: #6c757d;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    padding: 15px;
+}
+
+.table tbody td {
+    vertical-align: middle;
+    padding: 15px;
+    color: #495057;
+}
+
+/* Specific Column Handling for Mobile */
+@media (max-width: 576px) {
+    .payment-history-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .table {
+        font-size: 0.85rem; /* Slightly smaller text for mobile */
+    }
+    
+    .table tbody td, .table thead th {
+        padding: 12px 10px; /* Tighter spacing */
+    }
+
+    /* Optional: Hide the '#' column on very small screens to save space */
+    .table th:first-child, 
+    .table td:first-child {
+        display: none;
+    }
+}
+
+/* Badge Styling */
+.badge {
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+/* Row Hover Effect */
+.table-hover tbody tr:hover {
+    background-color: #f1f8ff;
+    transition: background-color 0.2s ease;
+}

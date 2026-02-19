@@ -1,0 +1,86 @@
+.header-h1, .dua-h5{
+    font-family: 'PlayFair Display';
+    color: var(--text-primary-color);
+}
+.header-p,.dua-small{
+    font-family: 'DM Sans';
+    color: var(--text-secondary-color);
+}
+.search-bar{
+    background-color: var(--card-bg-secondary) !important;
+    color: var(--text-secondary-color) !important;
+}
+.search-icon{
+    color: var(--text-primary-color);
+}
+.search-bar:focus{
+    outline: 1px solid var(--card-bg-primary) !important;
+}
+.cat-btn{
+    color: var(--text-primary-color) !important;
+    background-color: var(--card-bg-secondary) !important;
+}
+.cat-btn.active{
+    background-color: var(--nav-icon-txt) !important;
+    color: var(--icon-active-txt) !important;
+    border: none;
+
+}
+.dua-card{
+    background-color: var(--card-bg-secondary);
+    border: 1px solid var(--card-border) ;
+}
+.dua-icon{
+    color: var(--icon-color);
+    background-color: var(--icon-bg);
+    
+}
+.arabic-text{
+    font-family: 'Amiri' !important;
+    color: var(--text-primary-color);
+    font-size: 1.8rem;
+    line-height: 60px;
+}
+.trans-p, .trans-p-ml, .dua-small{
+    color: var(--text-secondary-color) ;
+}
+.dua-trans{
+    color: var(--text-primary-color);
+    font-family: 'DM Sans';
+}
+/* UserDua.css */
+.dua-card {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width:768px){
+    .arabic-text{
+        font-size: 1.5rem;
+    }
+}
+
+
+/* The Progress Bar that slides behind the text */
+.progress-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(40, 167, 69, 0.08); /* Light green tint */
+    transition: width 0.3s ease-out;
+    z-index: 0;
+}
+
+
+.counter-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+

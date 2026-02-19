@@ -1,0 +1,269 @@
+
+
+
+.payment-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.payment-container {
+  width: 100%;
+  max-width: 1200px;
+  background: transparent;
+  min-height: 100vh;
+}
+
+/* ===============================
+   Header
+================================ */
+.payment-header {
+  color: var(--text-primary-color);
+  padding: 2rem;
+  border-radius: 24px;
+  margin-bottom: 2rem;
+}
+
+.payment-header-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color:var(--text-primary-color);
+  font-family: 'PlayFair Display', serif;
+    font-size: 2rem;
+
+}
+
+.header-text p {
+  margin: 0;
+  margin: 4px 0 0 0;
+  font-size: 1rem;
+  color: var(--text-secondary-color);
+  font-family: 'DM Sans';
+}
+
+/* Back Button */
+.back-button {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background: none;
+  color: var(--text-primary-color);
+}
+
+.back-button:hover {
+  transform: translateX(-3px);
+}
+
+/* ===============================
+   Sections
+================================ */
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary-color);
+  margin-bottom: 1.25rem;
+  font-family: 'DM Sans';
+}
+
+/* ===============================
+   Payment Type Grid
+================================ */
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.type-card {
+  background: var(--card-item-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-primary-color);
+}
+
+.type-card.active {
+  background: var(--nav-box-bg);
+}
+
+.type-card h3 {
+  margin: 0;
+  color: var(--text-primary-color);
+  font-family: "DM Sans";
+}
+
+.type-card p {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary-color);
+  font-family: 'PlayFair Display';
+}
+
+.type-footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color:var(--text-primary-color);
+}
+
+/* ===============================
+   Payment Methods
+================================ */
+.method-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.method-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: var(--card-item-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  color: var(--text-primary-color);
+}
+
+.method-item.active {
+  border-color:var(--card-border);
+  background-color: var(--nav-box-bg);
+}
+
+.method-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-box {
+  background: var(--icon-bg);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* ===============================
+   Input
+================================ */
+.amount-input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  font-size: 1.1rem;
+  outline: none;
+  color: var(--text-primary-color);
+  background-color: var(--card-border);
+}
+
+.amount-input::placeholder {
+  color: var(--text-secondary-color);
+}
+
+.amount-input:focus {
+  box-shadow: 0 0 0 3px rgba(6, 78, 59, 0.1);
+}
+
+/* ===============================
+   Summary
+================================ */
+.summary-card {
+  background: var(--nav-box-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  color:var(--text-primary-color);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  color:var(--text-primary-color);
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--card-border);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color:var(--text-primary-color);
+}
+
+/* ===============================
+   Pay Button
+================================ */
+.pay-btn {
+  width: 100%;
+  background-color: #1a2e23;
+  color: #ffffff;
+  border: none;
+  padding: 1.25rem;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.pay-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   Responsive
+================================ */
+@media (max-width: 768px) {
+  
+
+  .payment-container {
+    max-width: 480px;
+  }
+
+  .payment-header {
+    border-radius: 0 0 24px 24px;
+    margin: -1rem -1rem 1.5rem -1rem;
+    padding: 1.75rem 1.25rem;
+    
+  }
+
+  
+
+  .type-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .type-grid {
+    grid-template-columns: 1fr;
+  }
+}

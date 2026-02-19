@@ -1,0 +1,43 @@
+.bento-container {
+  display: grid;
+  gap: 20px ;
+  
+  width: 100%;
+  /* Mobile Default: One column */
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "payments"
+    "certificates"
+    "community";
+}
+
+/* Tablet and Desktop Layout */
+@media (min-width: 480px) {
+  .bento-container {
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-areas: 
+      "payments certificates"
+      "community community"; /* Community spans both columns at bottom */
+  }
+}
+
+/* Assigning areas to items */
+.payments { grid-area: payments; }
+.certificates { grid-area: certificates; }
+.community { grid-area: community; }
+
+/* Bento Styling for the inner Cards */
+.bento-item > div {
+  height: 100%; /* Ensures all cards in a row match height */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg-secondary);
+  border-radius: 24px;
+  padding: 20px;
+  border: 1px solid rgba(0,0,0,0.05) ;
+}
+.bento-item{
+    gap: 40px !important;
+    display: flex;
+    flex-direction: column;
+}

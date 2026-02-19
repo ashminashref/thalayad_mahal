@@ -1,0 +1,37 @@
+.custom-modal {
+  border-radius: 20px !important;
+  padding: 10px;
+}
+
+.custom-input {
+  border-radius: 12px !important;
+  border: 1.5px solid #ececec !important;
+  padding: 10px 15px !important;
+  font-size: 0.9rem !important;
+  background-color: #fafafa !important;
+}
+
+.custom-input:focus {
+  border-color: #c5a059 !important;
+  box-shadow: none !important;
+  background-color: #fff !important;
+}
+
+.custom-submit-btn {
+  background-color: #1b2e1b !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+}
+
+.custom-submit-btn:hover {
+  background-color: #243d24 !important;
+}
+
+/* Custom Dropdown Arrow styling */
+select.custom-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}

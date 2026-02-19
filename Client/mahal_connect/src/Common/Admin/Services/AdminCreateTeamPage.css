@@ -1,0 +1,133 @@
+/* =========================
+   PAGE
+========================= */
+
+.admin-create-team-page {
+  background-color: var(--bg-color);
+  color: var(--text-primary-color);
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.admin-page-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.admin-page-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.admin-page-header p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn.icon-only {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--card-item-bg);
+  color: var(--text-primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn.icon-only:hover {
+  background-color: var(--card-item-bg-hover);
+}
+
+/* =========================
+   FORM CARD
+========================= */
+
+.admin-form-card {
+  background-color: var(--card-bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 22px;
+  padding: 20px;
+  max-width: 680px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.admin-input-field {
+  margin-bottom: 16px;
+}
+
+.admin-input-field label {
+  display: block;
+  font-size: 0.75rem;
+  margin-bottom: 6px;
+  color: var(--text-secondary-color);
+}
+
+.admin-input-field input,
+.admin-input-field select,
+.admin-input-field textarea {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--card-border);
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  background-color: var(--card-item-bg);
+  color: var(--text-primary-color);
+}
+
+.admin-input-field textarea {
+  resize: none;
+}
+
+/* Row */
+.admin-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* =========================
+   SUBMIT
+========================= */
+
+.admin-submit-btn {
+  margin-top: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 16px;
+  padding: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: var(--btn-pay);
+  color: var(--user-card-txt-primary);
+}
+
+.admin-submit-btn:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .admin-row {
+    grid-template-columns: 1fr;
+  }
+}

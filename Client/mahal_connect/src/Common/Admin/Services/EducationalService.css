@@ -1,0 +1,184 @@
+/* ===== Page ===== */
+.edu-page {
+  padding: 1.5rem;
+  background: #fdfcfb;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+.edu-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.edu-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1f2937;
+}
+
+.edu-header p {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.2rem;
+}
+
+/* Back button */
+.edu-back-btn {
+  margin-top: 0.15rem;
+  color: #374151;
+}
+
+.edu-back-btn:hover {
+  background-color: #f3f4f6;
+}
+
+/* ===== Form ===== */
+.edu-form {
+  background: white;
+  border: 1px solid #f3f0e9;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.edu-form h4 {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.formrow {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.edu-form input,
+.edu-form textarea {
+  width: 100%;
+  padding: 0.55rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.edu-form textarea {
+  resize: none;
+  height: 80px;
+}
+
+.edu-form button {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: #111827;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.edu-form button:hover {
+  opacity: 0.9;
+}
+
+/* ===== List ===== */
+.edu-list {
+  margin-top: 2rem;
+}
+
+.edu-card {
+  background: white;
+  border: 1px solid #f3f0e9;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.edu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.edu-card h5 {
+  margin-bottom: 0.2rem;
+}
+
+/* Meta */
+.edu-meta {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0.3rem 0;
+}
+
+/* Status */
+.status {
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  text-transform: capitalize;
+}
+
+.status.upcoming {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.status.cancelled {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* Cancel button */
+.cancel-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #fee2e2;
+  color: #991b1b;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #fecaca;
+}
+
+/* Cancelled card */
+.edu-card.cancelled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Description */
+.desc {
+  font-size: 0.8rem;
+  color: #374151;
+}
+
+/* Empty */
+.empty {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .formrow {
+    flex-direction: column;
+  }
+
+  .edu-card-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

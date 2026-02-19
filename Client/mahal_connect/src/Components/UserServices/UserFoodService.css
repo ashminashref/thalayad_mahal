@@ -1,0 +1,166 @@
+/* =========================
+   PAGE
+========================= */
+
+.user-food-page {
+  background-color: var(--bg-color);
+  color: var(--text-primary-color);
+  min-height: 100vh;
+  padding: 24px;
+  padding-bottom: 80px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.food-header {
+  margin-bottom: 20px;
+}
+
+.food-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.food-title-row h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.food-title-row p {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary-color);
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn.icon-only {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--card-item-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn.icon-only:hover {
+  background-color: var(--card-item-bg-hover);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.food-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.food-card {
+  background-color: var(--card-bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 16px;
+  transition: all 0.25s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.food-card-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Title */
+.food-card h2 {
+  margin: 6px 0 12px;
+  font-size: 1.05rem;
+}
+
+/* Info rows */
+.food-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+  margin-bottom: 10px;
+}
+
+.food-info div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Provider */
+.provider {
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.status.active {
+  background-color: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.view-btn {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--btn-pay);
+  color: var(--user-card-txt-primary);
+}
+
+.view-btn:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .food-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .food-title-row h1 {
+    font-size: 1.5rem;
+  }
+}

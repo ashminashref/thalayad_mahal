@@ -1,0 +1,127 @@
+/* Custom styling for the React Bootstrap Button */
+.pay-btn {
+  position: relative;
+  
+  padding: 22px 24px !important;
+  font-size: 16px;
+  background: #1a1a1a !important; /* Overriding BS primary */
+  color: white !important;
+  border-radius: 8px;
+  transition: all 0.3s ease !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.icon-container {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  color: #22c55e;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.default-icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hover animations */
+.pay-btn:hover .wallet-icon {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pay-btn:hover .card-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 0s;
+}
+
+.pay-btn:hover .payment-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 0.5s;
+}
+
+.pay-btn:hover .dollar-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 1s;
+}
+
+.pay-btn:hover .check-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 1.5s;
+}
+
+/* Active state */
+.pay-btn:active .icon {
+  animation: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pay-btn:active .check-icon {
+  animation: checkmarkAppear 0.6s ease forwards;
+  visibility: visible;
+}
+
+.btn-text {
+  font-weight: 600;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Keyframes */
+@keyframes iconRotate {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.5);
+  }
+  5% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+  15% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+  20% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.5);
+  }
+}
+
+@keyframes checkmarkAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-45deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}

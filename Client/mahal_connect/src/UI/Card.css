@@ -1,0 +1,122 @@
+/* Card Container */
+.custom-card {
+  background-color: var(--card-bg-secondary);
+  border-radius: 28px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+/* Special Highlight for Community Card */
+.community-highlight {
+  background-color: var(--card-bg-secondary); /* The light beige from the image */
+}
+
+/* Header Section */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card-icon-wrapper {
+  background-color: var(--icon-bg);
+  color: var(--icon-color); /* Dark Forest Green */
+  display: flex;
+  padding: 10px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color:var(--text-primary-color);
+}
+
+.card-subtitle-text {
+  font-size: 0.85rem;
+  color: #737373;
+  margin: 0;
+}
+
+/* List Items */
+.card-list-item {
+  background-color: var(--card-item-bg); /* Off-white item background */
+  border-radius: 20px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.card-list-item:hover {
+  background-color: var(--card-item-bg-hover);
+}
+
+.item-left-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.item-label-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-primary-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-primary-color);
+}
+
+.item-secondary-sub, .item-price-tag {
+  font-size: 0.8rem;
+  color: var(--text-secondary-color);
+}
+
+/* Status Badges */
+.badge-status {
+  font-size: 0.75rem;
+  padding: 4px 14px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.badge-status.pending {
+  background-color: #eaddca;
+  color: #7d5a3c;
+}
+
+.badge-status.paid {
+  background-color: #d1d9d1;
+  color: #4a5d4a;
+}
+
+.item-chevron {
+  color: #b3b3b3;
+}
+
+/* Footer Section */
+.card-bottom-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color:var(--text-secondary-color);
+  font-weight: 500;
+}

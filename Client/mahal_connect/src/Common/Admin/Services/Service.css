@@ -1,0 +1,49 @@
+
+
+/* Service cards grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Service card */
+.service-box {
+  background-color: var(--card-bg-secondary) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: 20px;
+  padding: 20px;
+color: var(--text-primary-color) !important;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  transition: all 0.25s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-4px);
+  border-color: var(--card-bg-primary) !important;
+}
+
+/* Icon */
+.service-icon {
+  background-color: var(--icon-bg);
+  color: var(--icon-color);
+  padding: 12px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+/* Manage button (Services page only) */
+.service-box .btn {
+  background-color:var(--btn-pay) !important;
+  color: var(--icon-bg);
+  border: none;
+}
+
+.service-box .btn:hover {
+  color: #ffffff !important;
+}
+

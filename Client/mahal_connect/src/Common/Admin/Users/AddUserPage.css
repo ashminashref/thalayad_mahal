@@ -1,0 +1,86 @@
+Page wrapper
+.add-user-page {
+  padding: 2rem;
+}
+
+/* Center container */
+.add-user-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Header */
+.add-user-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+
+/* Back button */
+.back-btn {
+  padding: 0;
+  color: #1a2e1a !important;
+  text-decoration: none;
+}
+
+
+
+/* Title */
+.add-user-title {
+  margin: 0;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Card */
+.add-user-card.card {
+  border-radius: 16px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Labels */
+.add-user-page .form-label {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+.add-user-page .form-control,
+.add-user-page .form-select {
+  border-radius: 10px;
+  border: 1.5px solid #e0e0e0;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus state */
+.add-user-page .form-control:focus,
+.add-user-page .form-select:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.15);
+  outline: none;
+}
+
+/* Submit button */
+.add-user-btn {
+  background-color: #1a2e1a !important;
+  border-radius: 12px;
+  padding: 12px;
+  border: none;
+  font-weight: 600;
+  color: #fff;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.add-user-btn:hover {
+  background-color: #243f24 !important;
+  transform: translateY(-1px);
+}
+
+.add-user-btn:active {
+  transform: translateY(0);
+}
