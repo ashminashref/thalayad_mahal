@@ -15,3 +15,18 @@ class CustomUserAdmin(UserAdmin):
 
 admin.site.register(User, CustomUserAdmin)
 admin.site.register(Announcements)
+
+
+# Server/mahalproject/myapp/admin.py
+from django.contrib import admin
+from .models import CertificateRequest
+
+@admin.register(CertificateRequest)
+class CertificateRequestAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'certificate_type', 'status', 'created_at')
+    list_filter = ('status', 'certificate_type')
+    search_fields = ('full_name', 'user__username')
+    readonly_fields = ('created_at',)
+    
+    # Optional: logic to restrict editing if you want
+    fields = ('user', 'certificate_type', 'full_name', 'event_date', 'document', 'status')
