@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Announcements, Team, TeamMember, Book, CertificateRequest
+from .models import User, Announcements, Team, TeamMember, Book, CertificateRequest, BookRequest
 
 class UserSerializer(serializers.ModelSerializer):
     # write_only ensures password isn't sent back in GET requests
@@ -86,16 +86,75 @@ class BookSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'author', 'category', 'description', 'quantity', 'in_stock']
 
 
+# serializers.py
+# serializers.py
+class BookRequestSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(source='user.username', read_only=True)
+    book_title = serializers.CharField(source='book.title', read_only=True)
+
+    class Meta:
+        model = BookRequest
+        fields = ['id', 'user', 'username', 'book', 'book_title', 'status', 'request_date']
+        # This is key: it tells Django that 'user' and 'book' 
+        # don't need to be sent again during a status update (PATCH)
+        extra_kwargs = {
+            'user': {'required': False},
+            'book': {'required': False}
+        }
+
 # payment
 from rest_framework import serializers
 from .models import Payment
 
+
 class PaymentSerializer(serializers.ModelSerializer):
+    # We include 'username' to make the Admin/History view more informative
+    username = serializers.CharField(source='user.username', read_only=True)
+
     class Meta:
         model = Payment
-        fields = ['id', 'amount', 'month', 'status', 'method', 'submitted_at']
+        fields = [
+            'id', 'username', 'amount', 'payment_type', 
+            'method', 'status', 'screenshot', 'submitted_at'
+        ]
+        read_only_fields = ['id', 'status', 'submitted_at']
 
+    # --- VALIDATION LOGIC ---
+    def validate_amount(self, value):
+        """
+        Check that the amount is a positive number.
+        """
+        if value <= 0:
+            raise serializers.ValidationError("Payment amount must be greater than zero.")
+        return value
 
+    def validate(self, data):
+        """
+        Object-level validation: Ensure UPI payments have a screenshot.
+        """
+        if data.get('method') == 'UPI' and not data.get('screenshot'):
+            # Note: This is usually caught by React, but backend check is safer for public apps
+            raise serializers.ValidationError({"screenshot": "UPI payments require a proof of payment screenshot."})
+        return data
+
+# PAYMENT TESTING ON DEBUGGING
+# Run: python manage.py shell
+
+from myapp.serializers import PaymentSerializer
+
+# Test 1: Negative Amount
+invalid_data = {'amount': -50, 'payment_type': 'ZAKAT', 'method': 'CASH'}
+serializer = PaymentSerializer(data=invalid_data)
+
+if not serializer.is_valid():
+    print(serializer.errors) 
+    # Output: {'amount': [ErrorDetail(string='Payment amount must be greater than zero.', code='invalid')]}
+
+# Test 2: Valid Data
+valid_data = {'amount': 1000, 'payment_type': 'SADAQAH', 'method': 'CASH'}
+serializer = PaymentSerializer(data=valid_data)
+print(serializer.is_valid()) # Output: True
+# -----------------------------------------------------------------------------------------
 
 # certificate
 # Server/mahalproject/myapp/serializers.py

@@ -46,20 +46,40 @@ class TeamMember(models.Model):
 
 # --- MERGED PAYMENT MODEL ---
 class Payment(models.Model):
-    PAYMENT_METHODS = [('CASH', 'Cash'), ('UPI', 'UPI/Online')]
-    STATUS_CHOICES = [('PENDING', 'Pending'), ('VERIFIED', 'Verified'), ('REJECTED', 'Rejected')]
+    PAYMENT_TYPES = [
+        ('MONTHLY', 'Monthly Contribution'),
+        ('MADRASSA', 'Madrassa Fee'),
+        ('ZAKAT', 'Zakat'),
+        ('SADAQAH', 'Sadaqah'),
+    ]
+    METHODS = [('CARD', 'Card'), ('UPI', 'UPI'), ('BANK', 'Bank Transfer'), ('CASH', 'Cash')]
+    STATUS = [('PENDING', 'Pending'), ('VERIFIED', 'Verified'), ('REJECTED', 'Rejected')]
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    payment_type = models.CharField(max_length=20, choices=PAYMENT_TYPES)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
-    month = models.CharField(max_length=50) 
-    method = models.CharField(max_length=10, choices=PAYMENT_METHODS, default='CASH')
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='PENDING')
-    transaction_id = models.CharField(max_length=100, blank=True, null=True)
+    method = models.CharField(max_length=20, choices=METHODS)
+    # Proof for UPI/Bank
+    screenshot = models.ImageField(upload_to='payments/proofs/', null=True, blank=True)
+    status = models.CharField(max_length=15, choices=STATUS, default='PENDING')
     submitted_at = models.DateTimeField(auto_now_add=True)
-    verified_at = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
-        return f"{self.user.username} - {self.month} ({self.status})"
+        return f"{self.user.username} - {self.payment_type} - ₹{self.amount}"
+
+
+class GlobalFeeConfig(models.Model):
+    monthly_contribution = models.DecimalField(max_digits=10, decimal_places=2, default=500.00)
+    madrassa_fee = models.DecimalField(max_digits=10, decimal_places=2, default=1200.00)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Global Fee Configuration"
+
+    def __str__(self):
+        return "Global Fee Settings"
+    
+
 
 # --- LIBRARY ---
 class Book(models.Model):
@@ -69,6 +89,24 @@ class Book(models.Model):
     description = models.TextField(blank=True)
     quantity = models.IntegerField(default=1)
     in_stock = models.BooleanField(default=True)
+
+
+class BookRequest(models.Model):
+    STATUS_CHOICES = [
+        ('PENDING', 'Pending'),
+        ('APPROVED', 'Approved'),
+        ('REJECTED', 'Rejected'),
+        ('IN_HAND', 'In Hand'),
+        ('RETURNED', 'Returned'),
+    ]
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='PENDING')
+    request_date = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.book.title}"    
 
 # --- CERTIFICATE REQUESTS ---
 class CertificateRequest(models.Model):

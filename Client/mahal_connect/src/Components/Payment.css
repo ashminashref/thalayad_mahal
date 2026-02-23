@@ -1,269 +1,286 @@
-
-
-
 .payment-wrapper {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
+    background-color: #f8fafc;
+    min-height: 100vh;
 }
 
-.payment-container {
-  width: 100%;
-  max-width: 1200px;
-  background: transparent;
-  min-height: 100vh;
+/* --- HERO SECTION --- */
+.amount-hero-section {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+    padding: 3rem 1.25rem 2.5rem;
+    border-radius: 0 0 40px 40px;
+    color: white;
+    box-shadow: 0 10px 25px -5px rgba(6, 78, 59, 0.3);
 }
 
-/* ===============================
-   Header
-================================ */
-.payment-header {
-  color: var(--text-primary-color);
-  padding: 2rem;
-  border-radius: 24px;
-  margin-bottom: 2rem;
+.hero-header-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 2rem;
 }
 
-.payment-header-top {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+/* DESIGN FIX: Glassmorphism Back Button */
+.premium-back-btn {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
 }
 
-.header-text h1 {
-  margin: 0;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color:var(--text-primary-color);
-  font-family: 'PlayFair Display', serif;
-    font-size: 2rem;
-
+.premium-back-btn:active {
+    transform: scale(0.9);
+    background: rgba(255, 255, 255, 0.4);
 }
 
-.header-text p {
-  margin: 0;
-  margin: 4px 0 0 0;
-  font-size: 1rem;
-  color: var(--text-secondary-color);
-  font-family: 'DM Sans';
+.hero-title-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-/* Back Button */
-.back-button {
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.2s;
-  background: none;
-  color: var(--text-primary-color);
+.amount-display-box {
+    text-align: center;
 }
 
-.back-button:hover {
-  transform: translateX(-3px);
+.amount-subtext {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* ===============================
-   Sections
-================================ */
-.section-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-primary-color);
-  margin-bottom: 1.25rem;
-  font-family: 'DM Sans';
+.amount-main-value {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-/* ===============================
-   Payment Type Grid
-================================ */
-.type-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
+/* --- SECTIONS --- */
+.premium-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
 }
 
-.type-card {
-  background: var(--card-item-bg);
-  border: 2px solid var(--card-border);
-  border-radius: 16px;
-  padding: 1.5rem;
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color: var(--text-primary-color);
+.type-pill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
 }
 
-.type-card.active {
-  background: var(--nav-box-bg);
+.type-pill-item {
+    background: white;
+    border: 2px solid #f1f5f9;
+    border-radius: 18px;
+    padding: 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.3s ease;
 }
 
-.type-card h3 {
-  margin: 0;
-  color: var(--text-primary-color);
-  font-family: "DM Sans";
+.type-pill-item.active {
+    border-color: #059669;
+    background: #ecfdf5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.1);
 }
 
-.type-card p {
-  margin-top: 0.25rem;
-  font-size: 0.75rem;
-  color: var(--text-secondary-color);
-  font-family: 'PlayFair Display';
+.pill-head {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #334155;
 }
 
-.type-footer {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  color:var(--text-primary-color);
+.pill-price-text {
+    font-size: 0.8rem;
+    color: #059669;
+    font-weight: 600;
 }
 
-/* ===============================
-   Payment Methods
-================================ */
-.method-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+/* --- METHODS --- */
+.method-card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.method-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.25rem;
-  background: var(--card-item-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  cursor: pointer;
-  transition: border-color 0.2s;
-  color: var(--text-primary-color);
+.method-selection-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
 }
 
-.method-item.active {
-  border-color:var(--card-border);
-  background-color: var(--nav-box-bg);
+.method-selection-card.active {
+    border-color: #059669;
+    background: #f8fafc;
 }
 
-.method-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.method-card-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
-.icon-box {
-  background: var(--icon-bg);
-  padding: 10px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
+.method-icon-bg {
+    background: var(--icon-bg);
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:var(--icon-color);
 }
 
-/* ===============================
-   Input
-================================ */
-.amount-input {
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  font-size: 1.1rem;
-  outline: none;
-  color: var(--text-primary-color);
-  background-color: var(--card-border);
+.method-selection-card.active .method-icon-bg {
+    background: #059669;
+    color: white;
 }
 
-.amount-input::placeholder {
-  color: var(--text-secondary-color);
+.m-name {
+    font-weight: 700;
+    margin: 0;
+    color: #1e293b;
 }
 
-.amount-input:focus {
-  box-shadow: 0 0 0 3px rgba(6, 78, 59, 0.1);
+.m-detail {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin: 0;
 }
 
-/* ===============================
-   Summary
-================================ */
-.summary-card {
-  background: var(--nav-box-bg);
-  border-radius: 16px;
-  padding: 1.5rem;
-  margin-top: 2rem;
-  color:var(--text-primary-color);
+.check-active { color: #059669; }
+
+
+
+.info-alert-box {
+    display: flex;
+    gap: 10px;
+    background: #f0fdf4;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    color: #065f46;
+    font-size: 0.75rem;
 }
 
-.summary-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.75rem;
-  color:var(--text-primary-color);
+
+.confirm-pay-btn {
+    width: 100%;
+    background: #064e3b;
+    color: white;
+    padding: 1.1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    border: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: transform 0.2s;
 }
 
-.total-row {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px dashed var(--card-border);
-  font-weight: 700;
-  font-size: 1.2rem;
-  color:var(--text-primary-color);
+.confirm-pay-btn:active { transform: scale(0.98); }
+/* Premium Input Design */
+.premium-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 2px solid #f1f5f9;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-/* ===============================
-   Pay Button
-================================ */
-.pay-btn {
-  width: 100%;
-  background-color: #1a2e23;
-  color: #ffffff;
-  border: none;
-  padding: 1.25rem;
-  border-radius: 14px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  cursor: pointer;
-  transition: opacity 0.2s;
+.premium-input-container:focus-within {
+    border-color: #064e3b;
+    box-shadow: 0 4px 12px rgba(6, 78, 59, 0.08);
+    transform: translateY(-1px);
 }
 
-.pay-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.input-icon-box {
+    padding: 0 15px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    border-right: 1px solid #f1f5f9;
 }
 
-/* ===============================
-   Responsive
-================================ */
-@media (max-width: 768px) {
-  
-
-  .payment-container {
-    max-width: 480px;
-  }
-
-  .payment-header {
-    border-radius: 0 0 24px 24px;
-    margin: -1rem -1rem 1.5rem -1rem;
-    padding: 1.75rem 1.25rem;
-    
-  }
-
-  
-
-  .type-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.premium-input-container:focus-within .input-icon-box {
+    color: #064e3b;
+    border-color: #ecfdf5;
 }
 
-@media (max-width: 480px) {
-  .type-grid {
-    grid-template-columns: 1fr;
-  }
+.premium-styled-input {
+    flex: 1;
+    height: 55px;
+    border: none;
+    background: transparent;
+    padding: 0 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    outline: none !important;
+}
+
+.premium-styled-input::placeholder {
+    color: #cbd5e1;
+    font-weight: 400;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 15px;
+    color: #64748b;
+    pointer-events: none;
+    transform: rotate(90deg);
+}
+
+.input-info-hint {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding-left: 4px;
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.input-info-hint span {
+    color: #059669;
+}
+
+/* Animations */
+.slide-in-bottom {
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
