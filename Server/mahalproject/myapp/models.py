@@ -142,3 +142,80 @@ class CertificateRequest(models.Model):
 
     def __str__(self):
         return f"{self.full_name} - {self.certificate_type}"
+    
+
+
+
+# SERVICES
+class MedicalRequest(models.Model):
+    STATUS_CHOICES = [
+        ('PENDING', 'Pending'),
+        ('APPROVED', 'Approved'),
+        ('REJECTED', 'Rejected'),
+    ]
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    patient_name = models.CharField(max_length=255)
+    disease = models.CharField(max_length=255)
+    medicine_details = models.TextField()
+    amount_needed = models.DecimalField(max_digits=10, decimal_places=2)
+    proof_image = models.ImageField(upload_to='medical_proofs/')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='PENDING')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.patient_name} - {self.disease}"
+
+
+class LoanRequest(models.Model):
+    STATUS_CHOICES = [
+        ('PENDING', 'Pending'),
+        ('APPROVED', 'Approved'),
+        ('REJECTED', 'Rejected'),
+        ('COMPLETED', 'Completed'),
+    ]
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    loan_purpose = models.CharField(max_length=255)
+    amount_requested = models.DecimalField(max_digits=12, decimal_places=2)
+    repayment_months = models.IntegerField()
+    id_proof = models.ImageField(upload_to='loan_documents/')
+    description = models.TextField()
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='PENDING')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.username} - ₹{self.amount_requested}"
+
+
+
+class EducationProgram(models.Model):
+    STATUS_CHOICES = [('active', 'Active'), ('upcoming', 'Upcoming'), ('completed', 'Completed')]
+    title = models.CharField(max_length=255)
+    teacher = models.CharField(max_length=255)
+    date = models.DateField()
+    time = models.TimeField()
+    description = models.TextField()
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='upcoming')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+class ProgramRegistration(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    program = models.ForeignKey(EducationProgram, on_delete=models.CASCADE, related_name='registrations')
+    registered_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'program') # Prevents double registration
+
+
+class FoodService(models.Model):
+    event_name = models.CharField(max_length=255)
+    food_name = models.CharField(max_length=255)
+    provider_name = models.CharField(max_length=255)
+    date = models.DateField()
+    notes = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.event_name} - {self.food_name}"

@@ -80,6 +80,11 @@ import EditBookPage from "./Common/Admin/Library/EditBookPage";
 import TeamDetailPage from "./Components/UserTeam/TeamDetailPage";
 import MyDocuments from "./Pages/User/MyDocuments";
 import SupportPage from "./Pages/User/SupportPage";
+import AdminLoanManagement from "./Common/Admin/Services/Manage/AdminLoanManagement";
+import MedicineManagement from "./Common/Admin/Services/Manage/MedicineManagement";
+import ClassManagement from "./Common/Admin/Services/Manage/ClassManagement";
+import FoodManagement from "./Common/Admin/Services/Manage/FoodManagement";
+import FoodServiceDetails from "./Components/UserServices/FoodServiceDetails";
 
 function App() {
   return (
@@ -106,6 +111,7 @@ function App() {
           <Route path="/dua" element={<ProtectedRoute><UserDua /></ProtectedRoute>} />
           <Route path="/dua/:categoryName" element={<ProtectedRoute><UserDua /></ProtectedRoute>} />
           <Route path='/foodservice' element={<ProtectedRoute><UserFoodServicePage /></ProtectedRoute>} />
+          <Route path="/services/foodservice/:id" element={<ProtectedRoute><FoodServiceDetails /></ProtectedRoute>} />
           <Route path="/usermedicine" element={<ProtectedRoute><UserMedicinePage /></ProtectedRoute>} />
           <Route path="/usereducation" element={<ProtectedRoute><UserEducationPage /></ProtectedRoute>} />
           <Route path="/userloan" element={<ProtectedRoute><UserLoanPage /></ProtectedRoute>} />
@@ -145,14 +151,27 @@ function App() {
 
             <Route path="services">
               <Route index element={<ServicesPage />} />
-              <Route path="foodservices">
+              {/* <Route path="foodservices">
                 <Route index element={<FoodServicePage />} />
                 <Route path="add" element={<AddFoodService />} />
                 <Route path="createteam" element={<AdminCreateTeamPage />} />
               </Route>
               <Route path="medical" element={<Medicine />} />
               <Route path="loan" element={<LoanAdminDashboard />} />
-              <Route path="education" element={<EducationService />} />
+              <Route path="education" element={<EducationService />} /> */}
+
+              <Route path="medical-manage" element={<MedicineManagement />} />
+  <Route path="loan-manage" element={<AdminLoanManagement />} />
+  <Route path="education-manage" element={<ClassManagement />} />
+  <Route path="food-manage" element={<FoodManagement />} />
+
+  {/* Existing FoodService sub-routes */}
+  <Route path="foodservices">
+    <Route index element={<FoodServicePage />} />
+    <Route path="add" element={<AddFoodService />} />
+    <Route path="createteam" element={<AdminCreateTeamPage />} />
+  </Route>
+
             </Route>
           </Route>
 

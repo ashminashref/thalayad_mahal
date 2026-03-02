@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Announcements, Team, TeamMember, Book, CertificateRequest, BookRequest
+from .models import User, Announcements, Team, TeamMember, Book, CertificateRequest, BookRequest, FoodService
 
 class UserSerializer(serializers.ModelSerializer):
     # write_only ensures password isn't sent back in GET requests
@@ -180,3 +180,126 @@ class CertificateRequestSerializer(serializers.ModelSerializer):
         ]
         # REMOVE 'status' from this list
         read_only_fields = ['id', 'username', 'created_at']
+
+
+# SERVICES
+from .models import MedicalRequest
+
+class MedicalRequestSerializer(serializers.ModelSerializer):
+    # These read-only fields help show the requester's name in the Admin Dashboard
+    username = serializers.CharField(source='user.username', read_only=True)
+    user_email = serializers.EmailField(source='user.email', read_only=True)
+
+    class Meta:
+        model = MedicalRequest
+        fields = [
+            'id', 
+            'user', 
+            'username', 
+            'user_email', 
+            'patient_name', 
+            'disease', 
+            'medicine_details', 
+            'amount_needed', 
+            'proof_image', 
+            'status', 
+            'created_at'
+        ]
+        # 'user' is handled automatically in the view's perform_create
+        extra_kwargs = {
+            'user': {'required': False},
+            'status': {'required': False}
+        }
+
+    def validate_amount_needed(self, value):
+        if value <= 0:
+            raise serializers.ValidationError("Amount requested must be greater than zero.")
+        return value
+
+
+
+from .models import LoanRequest
+
+class LoanRequestSerializer(serializers.ModelSerializer):
+    # Read-only fields to help the Admin identify the user without extra API calls
+    username = serializers.CharField(source='user.username', read_only=True)
+    full_name = serializers.CharField(source='user.first_name', read_only=True)
+    user_phone = serializers.CharField(source='user.phone', read_only=True)
+
+    class Meta:
+        model = LoanRequest
+        fields = [
+            'id', 
+            'user', 
+            'username', 
+            'full_name', 
+            'user_phone',
+            'loan_purpose', 
+            'amount_requested', 
+            'repayment_months', 
+            'id_proof', 
+            'description', 
+            'status', 
+            'created_at'
+        ]
+        # 'user' is injected in views.py (perform_create), so it's not required in the POST body
+        extra_kwargs = {
+            'user': {'required': False},
+            'status': {'required': False}
+        }
+
+    def validate_amount_requested(self, value):
+        if value < 1000:
+            raise serializers.ValidationError("Minimum loan amount is ₹1,000.")
+        return value
+
+    def validate_repayment_months(self, value):
+        if value < 1 or value > 60:
+            raise serializers.ValidationError("Repayment period must be between 1 and 60 months.")
+        return value
+    
+
+
+from .models import EducationProgram, ProgramRegistration
+
+class EducationProgramSerializer(serializers.ModelSerializer):
+    # This field allows the frontend to see how many people have joined
+    registration_count = serializers.IntegerField(
+        source='registrations.count', 
+        read_only=True
+    )
+    
+    # This helps the UI show if the CURRENT user is already in this class
+    is_registered = serializers.SerializerMethodField()
+
+    class Meta:
+        model = EducationProgram
+        fields = [
+            'id', 'title', 'teacher', 'date', 'time', 
+            'description', 'status', 'registration_count', 'is_registered'
+        ]
+
+    def get_is_registered(self, obj):
+        user = self.context.get('request').user
+        if user.is_authenticated:
+            return obj.registrations.filter(user=user).exists()
+        return False
+
+class ProgramRegistrationSerializer(serializers.ModelSerializer):
+    # Detailed info for the Admin to see who registered
+    student_name = serializers.CharField(source='user.first_name', read_only=True)
+    student_email = serializers.EmailField(source='user.email', read_only=True)
+    program_title = serializers.CharField(source='program.title', read_only=True)
+
+    class Meta:
+        model = ProgramRegistration
+        fields = ['id', 'user', 'student_name', 'student_email', 'program', 'program_title', 'registered_at']
+        extra_kwargs = {'user': {'read_only': True}}
+
+
+
+
+class FoodServiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FoodService
+        fields = ['id', 'event_name', 'food_name', 'provider_name', 'date', 'notes', 'created_at']

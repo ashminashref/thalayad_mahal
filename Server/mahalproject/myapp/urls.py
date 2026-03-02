@@ -40,4 +40,23 @@ urlpatterns = [
     path('certificate-requests/', CertificateRequestView.as_view(), name='cert-requests'),
     path('admin/certificate-requests/', AdminCertificateRequestListView.as_view(), name='admin-cert-list'),
     path('certificate-requests/<int:pk>/', CertificateRequestView.as_view(), name='cert-request-detail'),
+
+
+    # ----- SERVICES ----
+    path('medical-requests/', MedicalRequestView.as_view(), name='medical-requests'),
+    path('medical-requests/<int:pk>/', MedicalRequestView.as_view(), name='medical-request-detail'),
+
+
+    path('loan-requests/', LoanRequestView.as_view(), name ='loan-requests'),
+
+
+    path('programs/', ProgramListView.as_view(), name='program-list'),
+    path('programs/<int:pk>/register/', RegisterProgramView.as_view(), name='program-register'),
+
+    
+    path('food-services/', FoodServiceListCreate.as_view(), name='food-list'),
+    path('food-services/<int:pk>/', FoodServiceDetail.as_view(), name='food-detail'),
+
+    path('loan-requests/', LoanRequestView.as_view(), name='loan-list'),
+    path('loan-requests/<int:pk>/', LoanRequestView.as_view(), name='loan-detail'),
 ]

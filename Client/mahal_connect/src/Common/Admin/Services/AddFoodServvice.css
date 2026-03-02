@@ -1,0 +1,50 @@
+.add-food-container {
+    padding: 20px;
+    background: #f8fafc;
+    min-height: 90vh;
+}
+
+.form-card {
+    border-radius: 24px;
+    background: #ffffff;
+}
+
+.form-header-badge {
+    background: #ecfdf5;
+    color: #059669;
+    padding: 8px 16px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.form-card input, .form-card textarea {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.form-card input:focus {
+    border-color: #1c3124;
+    box-shadow: 0 0 0 4px rgba(28, 49, 36, 0.05);
+}
+
+.alert-notice {
+    background: #f1f5f9;
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.btn-dark {
+    background: #1c3124;
+    border: none;
+}

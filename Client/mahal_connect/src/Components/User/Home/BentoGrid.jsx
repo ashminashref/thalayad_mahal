@@ -96,7 +96,9 @@ function BentoGrid() {
             items={[
               { name: "Medicine Support", showArrow: true, onClick: () => navigate('/usermedicine') },
               { name: "Education Support", showArrow: true, onClick: () => navigate('/usereducation') },
-              { name: "Personal Loan", showArrow: true, onClick: () => navigate('/userloan') }
+              { name: "Personal Loan", showArrow: true, onClick: () => navigate('/userloan') },
+              { name: "Food Service", showArrow: true, onClick: () => navigate('/foodservice') }
+
             ]}
           />
         </Col>

@@ -1,223 +1,236 @@
-/* =========================
-   PAGE
-========================= */
-
 .user-medicine-page {
-  background-color: var(--bg-color);
-  color: var(--text-primary-color);
-  min-height: 100vh;
-  padding: 24px;
-  padding-bottom: 80px;
+    background-color: #f4f7f5;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    font-family: 'Inter', sans-serif;
 }
 
-/* =========================
-   HEADER
-========================= */
-
-.medicine-header {
-  margin-bottom: 20px;
-}
-
-.medicine-title-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.medicine-title-row h1 {
-  margin: 0;
-  font-size: 1.9rem;
-}
-
-.medicine-title-row p {
-  margin: 4px 0 0;
-  font-size: 0.9rem;
-  color: var(--text-secondary-color);
-}
-
-/* =========================
-   BACK BUTTON
-========================= */
-
-.back-btn.icon-only {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  background-color: var(--card-item-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.back-btn.icon-only:hover {
-  background-color: var(--card-item-bg-hover);
-}
-
-/* =========================
-   SUMMARY GRID
-========================= */
-
-.medicine-summary-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-/* Cards */
-.medicine-card {
-  background-color: var(--card-bg-secondary);
-  border: 1px solid var(--card-border);
-  border-radius: 18px;
-  padding: 16px;
-}
-
-.medicine-card h2 {
-  margin: 8px 0 0;
-  font-size: 1.4rem;
-}
-
-.card-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.8rem;
-  color: var(--text-secondary-color);
-}
-
-/* New Request */
-.new-request {
-  border: 2px dashed var(--card-border);
-  text-align: center;
-  cursor: pointer;
-}
-
-.icon-circle {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: var(--icon-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 6px;
-}
-
-/* =========================
-   TABLE CARD
-========================= */
-
-.medicine-table-card {
-  background-color: var(--card-bg-secondary);
-  border: 1px solid var(--card-border);
-  border-radius: 18px;
-  overflow: hidden;
+.medicine-main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* Header */
-.table-header {
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--card-border);
+.medicine-header-section {
+    padding: 30px 0;
 }
 
-.table-header h3 {
-  margin: 0;
-  font-size: 0.95rem;
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-/* Table */
-table {
-  width: 100%;
-  border-collapse: collapse;
+.back-btn-modern {
+    background: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-th {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  color: var(--text-secondary-color);
-  padding: 10px 16px;
-  background-color: var(--card-item-bg);
+.header-text h1 {
+    font-size: 1.8rem;
+    color: #1c3124;
+    margin: 0;
 }
 
-td {
-  padding: 12px 16px;
-  font-size: 0.85rem;
-  border-top: 1px solid var(--card-border);
+.header-text p {
+    color: #666;
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
 }
 
-tr:hover {
-  background-color: var(--card-item-bg-hover);
+/* Dashboard Grid */
+.medicine-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-.mono {
-  font-family: monospace;
-  color: var(--text-secondary-color);
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
 }
 
-.title {
-  font-weight: 500;
+.action-card {
+    background: #1c3124;
+    color: white;
+    cursor: pointer;
 }
 
-.date {
-  font-size: 0.7rem;
-  color: var(--text-secondary-color);
+.action-card p { color: #a8b3ac !important; }
+
+.icon-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.amount {
-  font-weight: 600;
+.icon-box.green { background: rgba(255,255,255,0.1); color: white; }
+.icon-box.orange { background: #fff4e6; color: #f08c00; }
+.icon-box.blue { background: #e7f5ff; color: #228be6; }
+
+.stat-info h3 { margin: 0; font-size: 1.2rem; }
+.stat-info p { margin: 0; font-size: 0.8rem; color: #888; }
+
+/* Table Container */
+.requests-section {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.04);
 }
 
-/* =========================
-   STATUS
-========================= */
-
-.status {
-  font-size: 0.65rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 999px;
-  text-transform: uppercase;
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #1c3124;
 }
 
-.status.approved {
-  background-color: rgba(34, 197, 94, 0.12);
-  color: #22c55e;
+.section-header h2 { font-size: 1.1rem; margin: 0; }
+
+.table-container-responsive {
+    overflow-x: auto;
 }
 
-.status.pending {
-  background-color: rgba(249, 115, 22, 0.12);
-  color: #f97316;
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
 }
 
-/* =========================
-   ICON BUTTON
-========================= */
-
-.icon-btn {
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 6px;
-  border-radius: 50%;
+.modern-table th {
+    text-align: left;
+    padding: 15px;
+    background: #f8faf9;
+    font-size: 0.85rem;
+    color: #555;
+    border-bottom: 1px solid #eee;
 }
 
-.icon-btn:hover {
-  background-color: var(--card-item-bg);
+.modern-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f9f9f9;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.p-name { font-weight: 600; color: #333; }
+.p-date { font-size: 0.75rem; color: #999; }
+.p-amount { font-weight: 700; color: #1c3124; }
 
-@media (max-width: 768px) {
-  .medicine-summary-grid {
-    grid-template-columns: 1fr;
-  }
+.status-pill {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
 
-  th, td {
-    padding: 10px;
-  }
+.status-pill.pending { background: #fff9db; color: #f08c00; }
+.status-pill.approved { background: #ebfbee; color: #40c057; }
+.status-pill.rejected { background: #fff5f5; color: #fa5252; }
+
+/* Modal */
+.medical-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 15px;
+}
+
+.medical-modal-card {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 24px;
+    padding: 25px;
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.modal-header h3 { font-size: 1.2rem; color: #1c3124; margin: 0; }
+
+.close-btn { background: #f4f4f4; border: none; border-radius: 50%; padding: 5px; cursor: pointer; }
+
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-size: 0.85rem; margin-bottom: 5px; font-weight: 600; }
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #eee;
+    border-radius: 12px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus { border-color: #1c3124; }
+
+.upload-zone {
+    border: 2px dashed #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.upload-label { cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px; color: #666; }
+
+.submit-btn-premium {
+    width: 100%;
+    padding: 15px;
+    background: #1c3124;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn-premium:hover { background: #2a4734; }
+
+.spinner { animation: spin 1s linear infinite; }
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.slide-up { animation: slideUp 0.4s ease-out; }
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .medicine-dashboard-grid { grid-template-columns: 1fr; }
+    .header-text h1 { font-size: 1.5rem; }
+    .stat-card { padding: 15px; }
 }

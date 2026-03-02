@@ -1,0 +1,145 @@
+/* MedicineManagement.css */
+.medicine-admin-page {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+.back-btn-premium {
+  width: 45px;
+  height: 45px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #1e293b;
+}
+
+.back-btn-premium:hover {
+  background: #1c3124;
+  color: white;
+  border-color: #1c3124;
+  transform: translateX(-3px);
+  box-shadow: 0 4px 12px rgba(28, 49, 36, 0.15);
+}
+
+/* Table Card */
+.premium-main-card {
+  border: none !important;
+  border-radius: 24px !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+  overflow: hidden;
+}
+
+.premium-table thead th {
+  background-color: #fdfdfd;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 20px 15px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.premium-table tbody td {
+  padding: 18px 15px;
+  border-bottom: 1px solid #f8fafc;
+}
+
+/* UI Elements */
+.avatar-placeholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+}
+
+.badge-soft-info {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+  font-weight: 600 !important;
+  padding: 6px 10px !important;
+  border-radius: 8px !important;
+}
+
+.med-details-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #475569;
+  background: #f8fafc;
+  padding: 8px 12px;
+  border-radius: 10px;
+  max-width: 250px;
+}
+
+.view-proof-btn {
+  font-size: 0.85rem !important;
+  color: #1c3124 !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: opacity 0.2s;
+}
+
+.view-proof-btn:hover { opacity: 0.7; }
+
+/* Status Pills */
+.status-dot-pill {
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot-pill.pending { background: #fffbeb; color: #92400e; }
+.status-dot-pill.approved { background: #f0fdf4; color: #166534; }
+.status-dot-pill.rejected { background: #fef2f2; color: #991b1b; }
+
+/* Action Buttons */
+.btn-action-green, .btn-action-red {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.btn-action-green { background: #f0fdf4; color: #166534; }
+.btn-action-green:hover { background: #1c3124; color: white; }
+
+.btn-action-red { background: #fef2f2; color: #991b1b; }
+.btn-action-red:hover { background: #991b1b; color: white; }
+
+.processed-tag {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Utility */
+.tiny-text { font-size: 0.7rem; }
+.admin-loader { height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; }
+
+@media (max-width: 992px) {
+  .admin-header-row { flex-direction: column; align-items: flex-start !important; }
+  .premium-table { min-width: 800px; }
+}

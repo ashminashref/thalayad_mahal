@@ -1,166 +1,136 @@
-/* =========================
-   PAGE
-========================= */
-
-.user-food-page {
-  background-color: var(--bg-color);
-  color: var(--text-primary-color);
+.user-food-portal {
+  background: #fdfdfd;
   min-height: 100vh;
-  padding: 24px;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
 }
 
-/* =========================
-   HEADER
-========================= */
-
-.food-header {
-  margin-bottom: 20px;
+/* Hero Section */
+.food-hero-section {
+  background: linear-gradient(135deg, #1c3124 0%, #2d4d39 100%);
+  height: 200px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  color: white;
 }
 
-.food-title-row {
+.hero-overlay {
+  padding: 50px 25px;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 20px;
 }
 
-.food-title-row h1 {
-  margin: 0;
-  font-size: 1.9rem;
-}
-
-.food-title-row p {
-  margin: 4px 0 0;
-  font-size: 0.9rem;
-  color: var(--text-secondary-color);
-}
-
-/* =========================
-   BACK BUTTON
-========================= */
-
-.back-btn.icon-only {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
+.back-btn-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
   border: none;
-  cursor: pointer;
-  background-color: var(--card-item-bg);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.back-btn-glass:hover { background: rgba(255, 255, 255, 0.25); transform: translateX(-3px); }
+
+.main-title-curly { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0; }
+.sub-title-text { font-size: 0.85rem; opacity: 0.8; margin-top: 5px; }
+
+/* Grid Layout */
+.content-container { max-width: 1200px; margin: -40px auto 0; padding: 0 20px; }
+
+.food-grid-premium {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* Card Styling */
+.premium-food-card {
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid #f1f5f9;
+  position: relative;
+}
+
+.premium-food-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(28, 49, 36, 0.08); }
+
+.card-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ecfdf5;
+  color: #059669;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-badge .dot { width: 6px; height: 6px; background: #059669; border-radius: 50%; }
+
+.card-body-content { padding: 30px; }
+
+.icon-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+
+.food-icon-circle {
+  width: 50px;
+  height: 50px;
+  background: #f0f7f2;
+  color: #1c3124;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.back-btn.icon-only:hover {
-  background-color: var(--card-item-bg-hover);
-}
+.event-title-text { font-size: 1.3rem; font-weight: 800; color: #1e293b; margin: 0; }
 
-/* =========================
-   GRID
-========================= */
+.detail-stack { display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px; }
 
-.food-services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 16px;
-}
+.detail-item { display: flex; align-items: flex-start; gap: 12px; }
+.item-icon { color: #94a3b8; margin-top: 2px; }
 
-/* =========================
-   CARD
-========================= */
+.item-info label { display: block; font-size: 0.65rem; text-transform: uppercase; color: #94a3b8; font-weight: 700; letter-spacing: 0.5px; }
+.item-info span { font-size: 0.95rem; color: #334155; font-weight: 600; }
 
-.food-card {
-  background-color: var(--card-bg-secondary);
-  border: 1px solid var(--card-border);
-  border-radius: 20px;
-  padding: 16px;
-  transition: all 0.25s ease;
-}
-
-.food-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-}
-
-.food-card-header {
-  display: flex;
-  justify-content: flex-end;
-}
-
-/* Title */
-.food-card h2 {
-  margin: 6px 0 12px;
-  font-size: 1.05rem;
-}
-
-/* Info rows */
-.food-info {
+.sponsor-footer {
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-size: 0.85rem;
-  color: var(--text-secondary-color);
-  margin-bottom: 10px;
+  gap: 15px;
 }
 
-.food-info div {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+.sponsor-info { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #64748b; }
 
-/* Provider */
-.provider {
-  font-size: 0.8rem;
-  margin-bottom: 12px;
-}
-
-/* =========================
-   STATUS
-========================= */
-
-.status {
-  font-size: 0.65rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 999px;
-  text-transform: uppercase;
-}
-
-.status.active {
-  background-color: rgba(34, 197, 94, 0.12);
-  color: #22c55e;
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-.view-btn {
+.btn-view-details-premium {
   width: 100%;
+  background: #1c3124;
+  color: white;
   border: none;
-  border-radius: 12px;
-  padding: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  background-color: var(--btn-pay);
-  color: var(--user-card-txt-primary);
+  padding: 14px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: 0.3s;
 }
 
-.view-btn:hover {
-  opacity: 0.9;
-}
+.btn-view-details-premium:hover { background: #2d4d39; box-shadow: 0 8px 20px rgba(28, 49, 36, 0.2); }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-  .food-services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .food-title-row h1 {
-    font-size: 1.5rem;
-  }
-}
+/* Utility */
+.premium-loader { height: 50vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; color: #1c3124; }
+.spinner-icon { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
