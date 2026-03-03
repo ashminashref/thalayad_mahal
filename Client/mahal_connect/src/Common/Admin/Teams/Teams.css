@@ -8,7 +8,10 @@
 .team-card:hover {
   transform: translateY(-5px);
 }
-
+.btn-premium{
+  background-color:var(--btn-pay) !important;
+  border:none !important;
+}
 .team-icon-wrapper {
   background-color: var(--icon-bg) ;
   padding: 10px;
@@ -22,16 +25,31 @@
 }
 
 /* Status Badges */
+/* Base Pill Styling */
 .status-pill {
-  padding: 6px 12px;
-  border-radius: 50px;
-  font-weight: 500;
-  font-size: 0.7rem;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.75rem;
   text-transform: capitalize;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
 }
 
-.status-pill.active { background-color: #e6f3ed !important; color: #1e4d3a; }
-.status-pill.upcoming { background-color: #fef9e7 !important; color: #947600; }
+/* Premium Active (Green) */
+.status-pill.active {
+  background: linear-gradient(180deg, #f0f9f4 0%, #e6f3ed 100%) !important;
+  color: #1b4332 !important;
+  border: 1px solid #d1e7dd !important;
+}
+
+/* Premium Upcoming (Yellow/Amber) */
+.status-pill.upcoming {
+  background: linear-gradient(180deg, #fffcf2 0%, #fef9e7 100%) !important;
+  color: #856404 !important;
+  border: 1px solid #f9f1c7 !important;
+}
 
 /* Avatar Grouping */
 .avatar-group {

@@ -64,7 +64,7 @@ const TeamsPage = () => {
         </div>
         
         <Button 
-          variant="dark" 
+           
           className="btn-premium d-flex align-items-center gap-2 px-4 py-2"
           onClick={() => navigate("add")}
         >
@@ -82,8 +82,8 @@ const TeamsPage = () => {
           {teams.map((team) => (
             <Col key={team.id}>
               <Card className="premium-team-card border-0 shadow-sm h-100">
-                <Card.Header className="bg-transparent border-0 pt-4 px-4 d-flex justify-content-between align-items-center">
-                  <Badge className={`status-tag ${team.status.toLowerCase()}`}>
+                <Card.Header className=" bg-transparent border-0 pt-4 px-4 d-flex justify-content-between align-items-center">
+                  <Badge className={` status-pill ${team.status.toLowerCase()}`}>
                     {team.status}
                   </Badge>
                   <div className="action-icons">
@@ -106,11 +106,11 @@ const TeamsPage = () => {
 
                   <div className="meta-info d-flex align-items-center gap-4 mb-4">
                     <div className="d-flex align-items-center gap-2">
-                      <Calendar size={16} className="text-dark" />
+                      <Calendar size={16} className="text-primary" />
                       <span className="small fw-semibold">{new Date(team.target_date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                     </div>
                     <div className="d-flex align-items-center gap-2">
-                      <Users size={16} className="text-dark" />
+                      <Users size={16} className="text-success" />
                       <span className="small fw-semibold">{team.members?.length || 0} Registered</span>
                     </div>
                   </div>

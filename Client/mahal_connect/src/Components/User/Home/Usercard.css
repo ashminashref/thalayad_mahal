@@ -1,91 +1,127 @@
-.mahal-card {
-  position: relative;
-  background-color: var(--user-card-bg);
-  color: var(--user-card-txt-secondary);
-  border-radius: 1.5rem; /* Slightly smaller radius for mobile */
-  padding: 1.5rem; /* Reduced padding for mobile */
-  overflow: hidden;
-  width: 100%;
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.id-card-wrapper {
+    perspective: 1200px;
 }
 
-
-
-.card-label {
-  font-size: 0.75rem; /* Smaller for mobile */
-  letter-spacing: 0.15rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
-  opacity: 0.8;
-  text-transform: uppercase;
-  color: var(--user-card-txt-secondary);
+.premium-mahal-card {
+    position: relative;
+    min-height: 230px;
+    background: linear-gradient(145deg, #1c3124 0%, #0d1a13 100%);
+    border-radius: 24px; /* Premium Standard Radius */
+    padding: 28px;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.card-holder-name {
-  font-size: 1.5rem; /* Responsive font size */
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--user-card-txt-primary);
+.premium-mahal-card:hover {
+    transform: translateY(-8px) rotateX(2deg);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
-.card-footer-info {
-  display: flex;
-  flex-wrap: wrap; /* Allows items to wrap on tiny screens */
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+/* Glass Reflection Layer */
+.glass-reflection {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,255,255,0.05) 100%);
+    pointer-events: none;
 }
 
-.info-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-width: fit-content;
+.card-top-accent {
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 150px; height: 150px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    filter: blur(30px);
 }
 
-.info-text {
-  display: flex;
-  flex-direction: column;
-  color: var(--user-card-txt-secondary);
-}
-
-.info-label {
-  font-size: 0.7rem;
-  opacity: 0.7;
-}
-
-.info-value {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* --- Responsive Adjustments --- */
-
-/* For Tablets and Desktops (Larger than 480px) */
-@media (min-width: 480px) {
-  .mahal-card {
-    padding: 2.5rem;
-    min-height: 220px;
-  }
-  
-  .card-holder-name {
-    font-size: 2.2rem;
-  }
-  
-  .info-value {
-    font-size: 1.2rem;
-  }
-}
-
-/* For Extra Small Screens (Below 350px) */
-@media (max-width: 350px) {
-  .card-footer-info {
+.id-card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-  }
+    justify-content: space-between;
+    height: 100%;
+}
+
+.geo-tag {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.masjid-name-premium {
+    font-size: 0.95rem;
+
+    text-transform: uppercase;
+    margin: 4px 0 0;
+}
+
+
+
+.label-caption {
+    font-size: 0.6rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1.5px;
+}
+
+.member-name-large {
+    font-size: 2rem;
+    margin: 6px 0 0;
+    
+}
+
+.id-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+}
+
+.meta-grid { display: flex; gap: 30px; }
+
+.meta-item label {
+    display: block;
+    font-size: 0.55rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 4px;
+}
+
+.mono-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.id-action-btn {
+    background: rgba(255,255,255,0.08);
+    border: none;
+    color: #fff;
+    width: 44px; height: 44px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.id-action-btn:hover {
+    background: #fff;
+    color: #1c3124;
+}
+
+/* Responsiveness */
+@media (max-width: 480px) {
+    .premium-mahal-card { padding: 20px; min-height: 200px; }
+    .member-name-large { font-size: 1.6rem; }
+    .meta-grid { gap: 15px; }
 }

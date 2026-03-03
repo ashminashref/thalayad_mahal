@@ -9,6 +9,9 @@
 .letter-spacing-1 {
   letter-spacing: 1px;
 }
+.type{
+  background-color:var(--card-bg-primary) !important;
+}
 
 .hover-bg-light:hover {
   background-color: #f8f9fa;
@@ -29,6 +32,8 @@
 .animate-fade-in {
   animation: fadeIn 0.5s ease-in-out;
 }
+
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }

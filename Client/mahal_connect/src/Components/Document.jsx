@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
-import { ArrowLeft, FileText, Trash2, Eye, Award, Baby, Heart } from 'lucide-react';
+import {  FileText, Trash2, Eye, Award, Baby, Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import '../Components/Document.css';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 
 function DocumentManager() {
   const navigate = useNavigate();
@@ -45,8 +46,8 @@ function DocumentManager() {
     <Container className="document-manager-container py-4">
       {/* Header */}
       <div className="d-flex align-items-center mb-4">
-        <Button variant="light" className="me-3 shadow-sm" onClick={() => navigate(-1)}>
-          <ArrowLeft size={20} />
+        <Button  className="me-3 bg-white  shadow-sm" onClick={() => navigate(-1)}>
+          <ArrowLeftIcon />
         </Button>
         <h4 className="mb-0 fw-bold">My Documents</h4>
       </div>

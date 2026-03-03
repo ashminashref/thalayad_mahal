@@ -48,7 +48,7 @@ const UserEducationPage = () => {
         });
         Swal.fire("Registered!", "Check your email for details.", "success");
         fetchPrograms(); // Refresh to update UI
-      } catch (err) {
+      } catch  {
         Swal.fire("Note", "You are already registered for this program.", "info");
       } finally {
         setRegisteringId(null);

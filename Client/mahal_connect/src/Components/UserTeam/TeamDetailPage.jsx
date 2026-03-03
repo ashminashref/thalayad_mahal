@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Container, Button, Card, Spinner, Badge, Row, Col } from 'react-bootstrap';
-import { ArrowLeft, Users, UserPlus, Info, ShieldCheck, UserCircle } from 'lucide-react';
+import {  Users,  ShieldCheck, UserCircle } from 'lucide-react';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import './TeamDetail.css'; // Create this for specific tweaks
@@ -30,20 +32,20 @@ const TeamDetailPage = () => {
     fetchTeamDetails();
   }, [id, navigate]);
 
-  const handleJoin = async () => {
-    Swal.fire({
-      title: 'Join Team?',
-      text: "Your request will be sent to the Mahal Admin for approval.",
-      icon: 'question',
-      showCancelButton: true,
-      confirmButtonColor: '#000',
-      confirmButtonText: 'Yes, Request to Join'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire("Submitted", "Request sent successfully!", "success");
-      }
-    });
-  };
+  // const handleJoin = async () => {
+  //   Swal.fire({
+  //     title: 'Join Team?',
+  //     text: "Your request will be sent to the Mahal Admin for approval.",
+  //     icon: 'question',
+  //     showCancelButton: true,
+  //     confirmButtonColor: '#000',
+  //     confirmButtonText: 'Yes, Request to Join'
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       Swal.fire("Submitted", "Request sent successfully!", "success");
+  //     }
+  //   });
+  // };
 
   if (loading) return (
     <div className="d-flex justify-content-center align-items-center vh-100">
@@ -54,13 +56,13 @@ const TeamDetailPage = () => {
   return (
     <Container className="py-4 mb-5 animate-fade-in">
       {/* Header Navigation */}
-      <div className="d-flex align-items-center mb-4">
+      <div className="d-flex  align-items-center mb-4">
         <Button 
           variant="light" 
-          className="rounded-circle shadow-sm me-3" 
+          className="p-2 shadow-sm me-3 bg-white" 
           onClick={() => navigate(-1)}
         >
-          <ArrowLeft size={18} />
+              <ArrowLeftIcon />
         </Button>
         <h4 className="mb-0 fw-bold">Team Details</h4>
       </div>
@@ -70,7 +72,7 @@ const TeamDetailPage = () => {
         <Col lg={8}>
           <Card className="border-0 shadow-sm rounded-4 overflow-hidden mb-4">
             <div className="p-4 border-bottom bg-white">
-              <Badge bg="dark" className="rounded-pill px-3 py-2 mb-2 fw-normal">
+              <Badge  className="type rounded-pill px-3 py-2 mb-2 fw-normal">
                 {team.occasion || 'General Volunteer'}
               </Badge>
               <h2 className="fw-bold text-dark display-6 mb-1">{team.team_name}</h2>
@@ -89,11 +91,11 @@ const TeamDetailPage = () => {
                 </p>
               </div>
 
-              <div className="d-flex gap-3 mt-4">
+              {/* <div className="d-flex gap-3 mt-4">
                 <Button variant="dark" className="flex-grow-1 py-3 rounded-4 fw-bold shadow-sm" onClick={handleJoin}>
                   <UserPlus size={18} className="me-2" /> Request to Join
                 </Button>
-              </div>
+              </div> */}
             </Card.Body>
           </Card>
         </Col>

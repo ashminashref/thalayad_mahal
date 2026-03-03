@@ -1,0 +1,36 @@
+/* BentoGrid.css additions */
+
+.prayer-live-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.next-label {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.digital-clock {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1c3124;
+  letter-spacing: -1px;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+.animate-pulse-green {
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}

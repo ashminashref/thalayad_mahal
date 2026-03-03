@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Card, Button, Badge, Spinner } from 'react-bootstrap';
-import { ArrowLeft, Bell, Megaphone, Calendar, CheckCheck } from 'lucide-react';
+import {  Bell, Megaphone, Calendar, CheckCheck } from 'lucide-react';
 import axios from 'axios';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+
 import './Notification.css';
 import Floatingnav from '../../Common/User/FloatingNav';
 
@@ -48,11 +50,11 @@ function NotificationPayment() {
   return (
     <Container className="py-4 mb-5 animate-fade-in">
       <div className="d-flex align-items-center mb-4">
-        <Button variant="light" className="me-2 rounded-circle shadow-sm" onClick={() => navigate(-1)}>
-          <ArrowLeft size={18} />
+        <Button variant="light" className="me-2 rounded-4 p-2 bg-white  shadow-sm" onClick={() => navigate(-1)}>
+          <ArrowLeftIcon />
         </Button>
         <h5 className="mb-0 d-flex align-items-center fw-bold">
-          <Bell size={20} className="me-2 text-primary" />
+          <Bell size={20} className="me-2 text-success" />
           Mahal Announcements
         </h5>
       </div>
@@ -68,7 +70,7 @@ function NotificationPayment() {
             announcements.map((note) => {
               const isRead = readIds.includes(note.id);
               return (
-                <Card key={note.id} className={`mb-3 border-0 shadow-sm rounded-4 ${!isRead ? 'border-start border-primary border-4' : 'opacity-75'}`}>
+                <Card key={note.id} className={`mb-3 border-0 shadow-sm rounded-4 ${!isRead ? 'border-start border-success border-4' : 'opacity-75'}`}>
                   <Card.Body className="p-3">
                     <div className="d-flex justify-content-between align-items-start">
                       <div className="d-flex gap-3">
@@ -87,7 +89,7 @@ function NotificationPayment() {
                       
                       {!isRead ? (
                         <Button 
-                          variant="outline-primary" 
+                          variant="outline-success" 
                           size="sm" 
                           className="rounded-pill px-3 py-1 extra-small"
                           onClick={() => markAsSeen(note.id)}

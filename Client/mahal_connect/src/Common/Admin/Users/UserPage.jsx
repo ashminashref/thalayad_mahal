@@ -69,7 +69,7 @@ const UsersPage = () => {
         <div>
           <div className="d-flex align-items-center gap-3 mb-1">
             <div className="user-icon-wrapper shadow-sm">
-              <UserIcon size={22} className="text-white" />
+              <UserIcon size={22}  />
             </div>
             <h3 className="fw-bold mb-0" style={{ letterSpacing: '-0.5px' }}>Community</h3>
           </div>
@@ -77,11 +77,11 @@ const UsersPage = () => {
         </div>
 
         <Button 
-          variant="dark" 
-          className="d-flex align-items-center gap-2 rounded-pill px-4 py-2 shadow-sm hover-lift"
+           
+          className="d-flex addUser-btn align-items-center gap-2 rounded-pill px-4 py-2 shadow-sm hover-lift"
           onClick={() => navigate("/admin/users/add")}
         >
-          <Plus size={18} /> <span className="fw-semibold">Add New Member</span>
+          <Plus size={18} className='plus'/> <span className="fw-semibold">Add New Member</span>
         </Button>
       </div>
 

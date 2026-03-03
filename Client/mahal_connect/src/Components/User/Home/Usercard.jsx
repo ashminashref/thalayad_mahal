@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Hash, Users, Loader2, AlertCircle } from 'lucide-react';
+import { Loader2, AlertCircle, ShieldCheck, MapPin, Share2, Award } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Usercard.css';
@@ -12,29 +12,19 @@ function Usercard() {
 
   useEffect(() => {
     const fetchUserProfile = async () => {
-      // 1. Retrieve and clean token
       const token = localStorage.getItem('access_token');
-      
       if (!token) {
-        console.error("No access token found in storage.");
         setLoading(false);
         setError(true);
         return;
       }
-
       try {
-        // 2. Fetch profile with strict Bearer formatting
         const res = await axios.get('http://127.0.0.1:8000/api/user-profile/', {
-          headers: { 
-            Authorization: `Bearer ${token.trim()}` 
-          }
+          headers: { Authorization: `Bearer ${token.trim()}` }
         });
         setProfile(res.data);
-        setError(false);
       } catch (err) {
-        console.error("Error fetching profile:", err);
         if (err.response?.status === 401) {
-          console.warn("Session expired or unauthorized. Redirecting to login...");
           localStorage.removeItem('access_token');
           navigate('/login');
         }
@@ -43,65 +33,61 @@ function Usercard() {
         setLoading(false);
       }
     };
-
     fetchUserProfile();
   }, [navigate]);
 
-  if (loading) {
-    return (
-      <div className='mahal-card mt-4 d-flex justify-content-center align-items-center' style={{ minHeight: '180px' }}>
-        <Loader2 className="animate-spin text-white" size={32} />
-      </div>
-    );
-  }
+  if (loading) return (
+    <div className='mahal-identity-shimmer mt-4'>
+      <Loader2 className="animate-spin text-success" size={32} />
+    </div>
+  );
 
-  if (error || !profile) {
-    return (
-      <div className='mahal-card mt-4 d-flex flex-column justify-content-center align-items-center text-white p-3' style={{ minHeight: '180px', background: 'linear-gradient(135deg, #2c3e50, #000000)' }}>
-        <AlertCircle size={30} className="mb-2 opacity-50" />
-        <p className="small mb-0 opacity-75 text-center">Unable to load Mahal Identity.<br/>Please log in again.</p>
-      </div>
-    );
-  }
+  if (error || !profile) return (
+    <div className='mahal-identity-fallback mt-4'>
+      <AlertCircle size={30} className="mb-2 text-danger opacity-50" />
+      <p className="small mb-0">Identity synchronization failed.</p>
+    </div>
+  );
 
   return (
-    <div className='mahal-card mt-4 animate-fade-in'>
-      {/* Decorative Background Pattern */}
-      <div className="card-pattern"></div>
-      
-      <div className="card-content">
-        <p className="card-label">MAHAL IDENTITY</p>
+    <div className='id-card-wrapper mt-4 animate-fade-in'>
+      <div className='premium-mahal-card'>
+        {/* Modern Depth Layers */}
+        <div className="glass-reflection"></div>
+        <div className="card-top-accent"></div>
         
-        {/* Dynamic Name from Django */}
-        <h2 className="card-holder-name curly-txt">
-          {profile.full_name || profile.first_name || profile.username}
-        </h2>
-        
-        <div className="card-footer-info">
-          {/* Mahal ID Section */}
-          <div className="info-group">
-            <div className="info-icon">
-              <Hash size={24} strokeWidth={1.5} />
+        <div className="id-card-content">
+          <div className="id-header">
+            <div className="org-branding">
+              <span className="geo-tag body-txt"><MapPin size={10} /> Kerala, Kozhikode</span>
+              <h4 className="masjid-name-premium body-txt">Salafi Masjid Thalayad</h4>
             </div>
-            <div className="info-text">
-              <span className="info-label">Mahal ID</span>
-              <span className="info-value">
-                {profile.mahal_id || profile.username || 'N/A'}
-              </span>
+            {/* <div className="official-seal">
+              <Award size={14} className="me-1" />
+              <span>VERIFIED</span>
+            </div> */}
+          </div>
+
+          <div className="id-body">
+            <div className="name-section">
+              <span className="label-caption"></span>
+              <h2 className="member-name-large mt-4 curly-txt">
+                {profile.full_name || profile.first_name || profile.username}
+              </h2>
             </div>
           </div>
 
-          {/* Family Head Section */}
-          <div className="info-group">
-            <div className="info-icon">
-              <Users size={24} strokeWidth={1.5} />
+          <div className="id-footer">
+            <div className="meta-grid">
+              <div className="meta-item">
+                <label className='body-txt'>MEMBER ID</label>
+                <span className="mono-text body-txt">#{profile.id.toString().padStart(5, '0')}</span>
+              </div>
+             
             </div>
-            <div className="info-text">
-              <span className="info-label">Family Head</span>
-              <span className="info-value">
-                {profile.family_head || 'Self'}
-              </span>
-            </div>
+            <button className="id-action-btn" title="Share Identity">
+              <Share2 size={18} />
+            </button>
           </div>
         </div>
       </div>

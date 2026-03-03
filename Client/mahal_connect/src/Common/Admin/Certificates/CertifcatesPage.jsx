@@ -165,7 +165,7 @@ const CertificatesPage = () => {
                       <div className="smallest text-muted">User: {req.username}</div>
                     </td>
                     <td>
-                      <Badge bg="info" className="text-capitalize px-3 py-2 rounded-pill fw-normal">
+                      <Badge  className="text-capitalize px-3 py-2 rounded-pill type-pill fw-normal">
                         {req.certificate_type}
                       </Badge>
                     </td>

@@ -2,7 +2,10 @@
 .library-card {
   border-radius: 24px;
 }
-
+.lbr-btn{
+  background-color:var(--btn-pay) !important;
+  border:none !important;
+}
 /* Icon */
 .library-icon-wrapper {
   background-color:var(--icon-bg);

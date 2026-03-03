@@ -69,8 +69,8 @@ const deleteAnnouncements = async (id) => {
         </div>
         
         <Button 
-          variant="dark" 
-          className="btn-custom py-2 px-4 d-flex align-items-center justify-content-center gap-2"
+         
+          className="btn-custom py-2 px-4 d-flex align-items-center border-0 justify-content-center gap-2"
           onClick={() => navigate("/admin/announcements/add")}
         >
           <Plus size={18} /> New Announcement

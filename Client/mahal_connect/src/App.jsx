@@ -85,10 +85,31 @@ import MedicineManagement from "./Common/Admin/Services/Manage/MedicineManagemen
 import ClassManagement from "./Common/Admin/Services/Manage/ClassManagement";
 import FoodManagement from "./Common/Admin/Services/Manage/FoodManagement";
 import FoodServiceDetails from "./Components/UserServices/FoodServiceDetails";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function App() {
+  const [isOffline, setIsOffline] = useState(!navigator.onLine);
+
+  useEffect(() => {
+    const handleOnline = () => setIsOffline(false);
+    const handleOffline = () => setIsOffline(true);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    
+    return() => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    }
+  },[])
   return (
     <ThemeProvider>
+      {isOffline && (
+        <div className="offline-notice">
+          You are currently offline. Some data may be outdated. Turn data on and refresh to get the latest updates.
+        </div>
+      )}
       <div className="p-3">
         <Routes>
 

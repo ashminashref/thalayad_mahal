@@ -99,7 +99,7 @@ const UserLoanPage = () => {
       </header>
 
       <div className="loan-summary-grid">
-        <div className="loan-card action-card" onClick={() => setShowModal(true)}>
+        <div className="loan-card action-card bg-dark" onClick={() => setShowModal(true)}>
           <div className="icon-circle"><Plus size={20} /></div>
           <div className="stat-info"><h3>Apply Now</h3><p>New Request</p></div>
         </div>

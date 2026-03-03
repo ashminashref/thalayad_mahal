@@ -103,8 +103,8 @@ const LibraryPage = () => {
             <small className="text-muted">{books.length} Titles | {requests.filter(r => r.status === 'PENDING').length} New Requests</small>
           </div>
         </div>
-        <Button variant="dark" className="rounded-pill px-4" onClick={() => setShowAddModal(true)}>
-          <Plus size={18} className="me-1" /> Add Book
+        <Button  className="rounded-pill lbr-btn px-4" onClick={() => setShowAddModal(true)}>
+          <Plus size={18} className="me-1 " /> Add Book
         </Button>
       </div>
 

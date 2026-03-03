@@ -39,6 +39,7 @@
 .edu-back-btn {
   background-color: var(--card-item-bg) !important;
   border-radius: 12px !important;
+  
 }
 
 .edu-back-btn:hover {

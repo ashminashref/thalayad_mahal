@@ -58,8 +58,8 @@
   font-size: 0.75rem;
 }
 
-.status-badge.published { background-color: #1b2e25 !important; color: #e4dcdc; }
-.status-badge.draft { background-color: #e0e0e0 !important; color: #555; }
+.status-badge.published { background-color:#248de3 !important; color:#ffffff !important; border:none; }
+.status-badge.draft { background-color: #db0202 !important; color: #ffffff; }
 
 .btn-custom {
   border-radius: 50px;

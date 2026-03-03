@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Users, Utensils, Calendar, MapPin, Loader2, ChefHat, ArrowLeft } from "lucide-react";
 import axios from "axios";
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import "./UserFoodService.css";
 import Floatingnav from "../../Common/User/FloatingNav";
 
@@ -34,7 +35,7 @@ const UserFoodServicePage = () => {
       <header className="food-hero-section">
         <div className="hero-overlay">
           <button onClick={() => navigate("/")} className="back-btn-glass">
-            <ArrowLeft size={20} />
+            <ArrowLeftIcon />
           </button>
           <div className="hero-text-content">
             <h1 className="main-title-curly">Food Services</h1>
